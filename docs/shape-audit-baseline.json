@@ -1,0 +1,1064 @@
+{
+  "distinctBorderRadii": [
+    "28px",
+    "0px",
+    "14px",
+    "3.35544e+07px",
+    "10px"
+  ],
+  "distinctContainerRadii": [
+    "28px"
+  ],
+  "nonCapsuleControlsCount": 657,
+  "subpixelAnomaliesCount": 240,
+  "nestedBackdropCount": 238,
+  "tableBackdropCount": 0,
+  "transformAnomaliesCount": 347,
+  "backdropFilterPerScreen": {
+    "login@desktop-1920": 3,
+    "overview@desktop-1920": 8,
+    "cards@desktop-1920": 16,
+    "transactions@desktop-1920": 8,
+    "monthly-view@desktop-1920": 8,
+    "cashback-rules@desktop-1920": 4,
+    "category-codes@desktop-1920": 26,
+    "card-tracking@desktop-1920": 16,
+    "settings@desktop-1920": 7,
+    "change-password@desktop-1920": 2,
+    "not-found@desktop-1920": 2,
+    "login@desktop-1366": 3,
+    "overview@desktop-1366": 8,
+    "cards@desktop-1366": 16,
+    "transactions@desktop-1366": 8,
+    "monthly-view@desktop-1366": 8,
+    "cashback-rules@desktop-1366": 4,
+    "category-codes@desktop-1366": 26,
+    "card-tracking@desktop-1366": 16,
+    "settings@desktop-1366": 7,
+    "change-password@desktop-1366": 2,
+    "not-found@desktop-1366": 2,
+    "login@tablet-768": 3,
+    "overview@tablet-768": 9,
+    "cards@tablet-768": 16,
+    "transactions@tablet-768": 6,
+    "monthly-view@tablet-768": 9,
+    "cashback-rules@tablet-768": 5,
+    "category-codes@tablet-768": 26,
+    "card-tracking@tablet-768": 17,
+    "settings@tablet-768": 8,
+    "change-password@tablet-768": 3,
+    "not-found@tablet-768": 3,
+    "login@mobile-390": 3,
+    "overview@mobile-390": 9,
+    "cards@mobile-390": 26,
+    "transactions@mobile-390": 6,
+    "monthly-view@mobile-390": 9,
+    "cashback-rules@mobile-390": 5,
+    "category-codes@mobile-390": 45,
+    "card-tracking@mobile-390": 15,
+    "settings@mobile-390": 8,
+    "change-password@mobile-390": 3,
+    "not-found@mobile-390": 3
+  },
+  "samples": {
+    "controlShapes": [
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 24,
+          "height": 24,
+          "x": 1081,
+          "y": 577.5,
+          "borderRadius": "0px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "Đăng nhập",
+          "width": 318,
+          "height": 48,
+          "x": 801,
+          "y": 637.5,
+          "borderRadius": "14px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.70623 0.135149 -0.00636274 / 0.25) 0px 4px 6px -1px, oklab(0.70623 0.135149 -0.00636274 / 0.25) 0px 2px 4px -2px",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "Đăng xuất",
+          "width": 214,
+          "height": 44,
+          "x": 25,
+          "y": 1011,
+          "borderRadius": "14px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "Đăng xuất",
+          "width": 214,
+          "height": 44,
+          "x": 25,
+          "y": 1011,
+          "borderRadius": "14px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "Thêm thẻ mới",
+          "width": 149.1,
+          "height": 44,
+          "x": 1632.9,
+          "y": 9.5,
+          "borderRadius": "14px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(226, 122, 161, 0.35) 0px 6px 20px 0px, rgba(255, 255, 255, 0.65) 0px 1.5px 0px 0px inset",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "Tất cả",
+          "width": 65.1,
+          "height": 44,
+          "x": 1429.8,
+          "y": 70,
+          "borderRadius": "10px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "Đang dùng",
+          "width": 94.1,
+          "height": 44,
+          "x": 1500.9,
+          "y": 70,
+          "borderRadius": "10px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "Tạm ngưng",
+          "width": 95.5,
+          "height": 44,
+          "x": 1601,
+          "y": 70,
+          "borderRadius": "10px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "Đã đóng",
+          "width": 79.5,
+          "height": 44,
+          "x": 1702.5,
+          "y": 70,
+          "borderRadius": "10px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 32,
+          "height": 32,
+          "x": 1575.8,
+          "y": 1040.5,
+          "borderRadius": "10px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 32,
+          "height": 32,
+          "x": 1611.8,
+          "y": 1040.5,
+          "borderRadius": "10px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 32,
+          "height": 32,
+          "x": 1698,
+          "y": 1040.5,
+          "borderRadius": "10px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 32,
+          "height": 32,
+          "x": 1734,
+          "y": 1040.5,
+          "borderRadius": "10px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "transactions",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "Đăng xuất",
+          "width": 214,
+          "height": 44,
+          "x": 25,
+          "y": 1011,
+          "borderRadius": "14px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "transactions",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "Ghi nhận giao dịch",
+          "width": 182.2,
+          "height": 44,
+          "x": 1599.8,
+          "y": 9.5,
+          "borderRadius": "14px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(226, 122, 161, 0.35) 0px 6px 20px 0px, rgba(255, 255, 255, 0.65) 0px 1.5px 0px 0px inset",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "transactions",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 32,
+          "height": 32,
+          "x": 1575.8,
+          "y": 1040.5,
+          "borderRadius": "10px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "transactions",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 32,
+          "height": 32,
+          "x": 1611.8,
+          "y": 1040.5,
+          "borderRadius": "10px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "transactions",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 32,
+          "height": 32,
+          "x": 1698,
+          "y": 1040.5,
+          "borderRadius": "10px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "transactions",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 32,
+          "height": 32,
+          "x": 1734,
+          "y": 1040.5,
+          "borderRadius": "10px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "monthly-view",
+        "vp": "desktop-1920",
+        "control": {
+          "tag": "button",
+          "role": "",
+          "text": "Đăng xuất",
+          "width": 214,
+          "height": 44,
+          "x": 25,
+          "y": 1011,
+          "borderRadius": "14px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      }
+    ],
+    "nestedBackdrops": [
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "element": {
+          "tag": "input",
+          "className": "w-full h-[40px] max-md:h-[48px",
+          "hasBackdropAncestor": true,
+          "isTableRelated": false,
+          "rect": {
+            "width": 318,
+            "height": 40
+          }
+        }
+      },
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "element": {
+          "tag": "input",
+          "className": "w-full h-[40px] max-md:h-[48px",
+          "hasBackdropAncestor": true,
+          "isTableRelated": false,
+          "rect": {
+            "width": 318,
+            "height": 40
+          }
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "element": {
+          "tag": "thead",
+          "className": "sticky top-0 z-20 glass-surfac",
+          "hasBackdropAncestor": true,
+          "isTableRelated": false,
+          "rect": {
+            "width": 1389,
+            "height": 48
+          }
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "element": {
+          "tag": "span",
+          "className": "inline-flex items-center justi",
+          "hasBackdropAncestor": true,
+          "isTableRelated": false,
+          "rect": {
+            "width": 81,
+            "height": 22
+          }
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "element": {
+          "tag": "span",
+          "className": "inline-flex items-center justi",
+          "hasBackdropAncestor": true,
+          "isTableRelated": false,
+          "rect": {
+            "width": 81,
+            "height": 22
+          }
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "element": {
+          "tag": "span",
+          "className": "inline-flex items-center justi",
+          "hasBackdropAncestor": true,
+          "isTableRelated": false,
+          "rect": {
+            "width": 81,
+            "height": 22
+          }
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "element": {
+          "tag": "span",
+          "className": "inline-flex items-center justi",
+          "hasBackdropAncestor": true,
+          "isTableRelated": false,
+          "rect": {
+            "width": 81,
+            "height": 22
+          }
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "element": {
+          "tag": "span",
+          "className": "inline-flex items-center justi",
+          "hasBackdropAncestor": true,
+          "isTableRelated": false,
+          "rect": {
+            "width": 81,
+            "height": 22
+          }
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "element": {
+          "tag": "span",
+          "className": "inline-flex items-center justi",
+          "hasBackdropAncestor": true,
+          "isTableRelated": false,
+          "rect": {
+            "width": 81,
+            "height": 22
+          }
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "element": {
+          "tag": "span",
+          "className": "inline-flex items-center justi",
+          "hasBackdropAncestor": true,
+          "isTableRelated": false,
+          "rect": {
+            "width": 81,
+            "height": 22
+          }
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "element": {
+          "tag": "span",
+          "className": "inline-flex items-center justi",
+          "hasBackdropAncestor": true,
+          "isTableRelated": false,
+          "rect": {
+            "width": 81,
+            "height": 22
+          }
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "element": {
+          "tag": "span",
+          "className": "inline-flex items-center justi",
+          "hasBackdropAncestor": true,
+          "isTableRelated": false,
+          "rect": {
+            "width": 81,
+            "height": 22
+          }
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "element": {
+          "tag": "span",
+          "className": "inline-flex items-center justi",
+          "hasBackdropAncestor": true,
+          "isTableRelated": false,
+          "rect": {
+            "width": 81,
+            "height": 22
+          }
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "element": {
+          "tag": "span",
+          "className": "inline-flex items-center justi",
+          "hasBackdropAncestor": true,
+          "isTableRelated": false,
+          "rect": {
+            "width": 81,
+            "height": 22
+          }
+        }
+      },
+      {
+        "page": "category-codes",
+        "vp": "desktop-1920",
+        "element": {
+          "tag": "thead",
+          "className": "sticky top-0 z-20 glass-surfac",
+          "hasBackdropAncestor": true,
+          "isTableRelated": false,
+          "rect": {
+            "width": 1389,
+            "height": 48
+          }
+        }
+      }
+    ],
+    "tableBackdrops": [],
+    "subpixel": [
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "input",
+          "role": "",
+          "text": "",
+          "width": 318,
+          "height": 40,
+          "x": 801,
+          "y": 489.5,
+          "borderRadius": "28px",
+          "isCapsule": true,
+          "isCircle": false,
+          "boxShadow": "rgba(226, 122, 161, 0.18) 0px 8px 28px 0px, rgba(255, 255, 255, 0.6) 0px 1.5px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset",
+          "backdropFilter": "blur(16px) saturate(1.7) brightness(1.08)"
+        }
+      },
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "input",
+          "role": "",
+          "text": "",
+          "width": 318,
+          "height": 40,
+          "x": 801,
+          "y": 569.5,
+          "borderRadius": "28px",
+          "isCapsule": true,
+          "isCircle": false,
+          "boxShadow": "rgba(226, 122, 161, 0.18) 0px 8px 28px 0px, rgba(255, 255, 255, 0.6) 0px 1.5px 0px 0px inset, rgba(255, 255, 255, 0.08) 0px -1px 0px 0px inset",
+          "backdropFilter": "blur(16px) saturate(1.7) brightness(1.08)"
+        }
+      },
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 24,
+          "height": 24,
+          "x": 1081,
+          "y": 577.5,
+          "borderRadius": "0px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "Đăng nhập",
+          "width": 318,
+          "height": 48,
+          "x": 801,
+          "y": 637.5,
+          "borderRadius": "14px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.70623 0.135149 -0.00636274 / 0.25) 0px 4px 6px -1px, oklab(0.70623 0.135149 -0.00636274 / 0.25) 0px 2px 4px -2px",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 44,
+          "height": 44,
+          "x": 989,
+          "y": 9.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": true,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "Tháng 10/2026",
+          "width": 170,
+          "height": 32,
+          "x": 1033,
+          "y": 15.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 44,
+          "height": 44,
+          "x": 1203,
+          "y": 9.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": true,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "Chi tiêu theo thẻ",
+          "width": 126.4,
+          "height": 44,
+          "x": 770.8,
+          "y": 254.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "Xu hướng theo tháng",
+          "width": 152.8,
+          "height": 44,
+          "x": 901.2,
+          "y": 254.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "Cần chú ý0",
+          "width": 111.6,
+          "height": 44,
+          "x": 1521.5,
+          "y": 254.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "Thẻ của tôi11",
+          "width": 121,
+          "height": 44,
+          "x": 1637,
+          "y": 254.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "Thêm thẻ mới",
+          "width": 149.1,
+          "height": 44,
+          "x": 1632.9,
+          "y": 9.5,
+          "borderRadius": "14px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(226, 122, 161, 0.35) 0px 6px 20px 0px, rgba(255, 255, 255, 0.65) 0px 1.5px 0px 0px inset",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "Tất cả",
+          "width": 65.1,
+          "height": 44,
+          "x": 1429.8,
+          "y": 70,
+          "borderRadius": "10px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "Đang dùng",
+          "width": 94.1,
+          "height": 44,
+          "x": 1500.9,
+          "y": 70,
+          "borderRadius": "10px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "Đã đóng",
+          "width": 79.5,
+          "height": 44,
+          "x": 1702.5,
+          "y": 70,
+          "borderRadius": "10px",
+          "isCapsule": false,
+          "isCircle": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      }
+    ],
+    "transforms": [
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -top-[10%] -left-[6%]",
+          "transform": "matrix(1.01124, 0, 0, 1.01124, 6.74333, -8.99111)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute top-[20%] -right-[8%]",
+          "transform": "matrix(1.01269, 0, 0, 1.01269, -5.55332, 3.96665)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -bottom-[12%] left-[1",
+          "transform": "matrix(0.992043, 0, 0, 0.992043, 3.97837, 6.96216)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute top-[55%] right-[25%]",
+          "transform": "matrix(1.01124, 0, 0, 1.01124, 6.74333, -8.99111)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -top-[10%] -left-[6%]",
+          "transform": "matrix(1.01781, 0, 0, 1.01781, 10.6863, -14.2483)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute top-[20%] -right-[8%]",
+          "transform": "matrix(1.02038, 0, 0, 1.02038, -8.918, 6.37)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -bottom-[12%] left-[1",
+          "transform": "matrix(0.987318, 0, 0, 0.987318, 6.34114, 11.097)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute top-[55%] right-[25%]",
+          "transform": "matrix(1.01781, 0, 0, 1.01781, 10.6863, -14.2483)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -top-[10%] -left-[6%]",
+          "transform": "matrix(1.00585, 0, 0, 1.00585, 3.51241, -4.68321)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute top-[20%] -right-[8%]",
+          "transform": "matrix(1.00658, 0, 0, 1.00658, -2.87831, 2.05594)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -bottom-[12%] left-[1",
+          "transform": "matrix(0.995865, 0, 0, 0.995865, 2.06741, 3.61798)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute top-[55%] right-[25%]",
+          "transform": "matrix(1.00585, 0, 0, 1.00585, 3.51241, -4.68321)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "transactions",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -top-[10%] -left-[6%]",
+          "transform": "matrix(1.00523, 0, 0, 1.00523, 3.14054, -4.18738)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "transactions",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute top-[20%] -right-[8%]",
+          "transform": "matrix(1.00588, 0, 0, 1.00588, -2.5732, 1.838)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "transactions",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -bottom-[12%] left-[1",
+          "transform": "matrix(0.996303, 0, 0, 0.996303, 1.84835, 3.23462)",
+          "isAllowed": false
+        }
+      }
+    ]
+  }
+}

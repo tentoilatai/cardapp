@@ -1,0 +1,222 @@
+[
+  {
+    "page": "login",
+    "viewport": "desktop-1920",
+    "surfaces": []
+  },
+  {
+    "page": "dashboard",
+    "viewport": "desktop-1920",
+    "surfaces": []
+  },
+  {
+    "page": "cards",
+    "viewport": "desktop-1920",
+    "surfaces": []
+  },
+  {
+    "page": "transactions",
+    "viewport": "desktop-1920",
+    "surfaces": []
+  },
+  {
+    "page": "monthly-view",
+    "viewport": "desktop-1920",
+    "surfaces": []
+  },
+  {
+    "page": "cashback-rules",
+    "viewport": "desktop-1920",
+    "surfaces": []
+  },
+  {
+    "page": "category-codes",
+    "viewport": "desktop-1920",
+    "surfaces": []
+  },
+  {
+    "page": "card-tracking",
+    "viewport": "desktop-1920",
+    "surfaces": []
+  },
+  {
+    "page": "settings",
+    "viewport": "desktop-1920",
+    "surfaces": []
+  },
+  {
+    "page": "change-password",
+    "viewport": "desktop-1920",
+    "surfaces": []
+  },
+  {
+    "page": "not-found",
+    "viewport": "desktop-1920",
+    "surfaces": []
+  },
+  {
+    "page": "login",
+    "viewport": "desktop-1366",
+    "surfaces": []
+  },
+  {
+    "page": "dashboard",
+    "viewport": "desktop-1366",
+    "surfaces": []
+  },
+  {
+    "page": "cards",
+    "viewport": "desktop-1366",
+    "surfaces": []
+  },
+  {
+    "page": "transactions",
+    "viewport": "desktop-1366",
+    "surfaces": []
+  },
+  {
+    "page": "monthly-view",
+    "viewport": "desktop-1366",
+    "surfaces": []
+  },
+  {
+    "page": "cashback-rules",
+    "viewport": "desktop-1366",
+    "surfaces": []
+  },
+  {
+    "page": "category-codes",
+    "viewport": "desktop-1366",
+    "surfaces": []
+  },
+  {
+    "page": "card-tracking",
+    "viewport": "desktop-1366",
+    "surfaces": []
+  },
+  {
+    "page": "settings",
+    "viewport": "desktop-1366",
+    "surfaces": []
+  },
+  {
+    "page": "change-password",
+    "viewport": "desktop-1366",
+    "surfaces": []
+  },
+  {
+    "page": "not-found",
+    "viewport": "desktop-1366",
+    "surfaces": []
+  },
+  {
+    "page": "login",
+    "viewport": "tablet-ipad",
+    "surfaces": []
+  },
+  {
+    "page": "dashboard",
+    "viewport": "tablet-ipad",
+    "surfaces": []
+  },
+  {
+    "page": "cards",
+    "viewport": "tablet-ipad",
+    "surfaces": []
+  },
+  {
+    "page": "transactions",
+    "viewport": "tablet-ipad",
+    "surfaces": []
+  },
+  {
+    "page": "monthly-view",
+    "viewport": "tablet-ipad",
+    "surfaces": []
+  },
+  {
+    "page": "cashback-rules",
+    "viewport": "tablet-ipad",
+    "surfaces": []
+  },
+  {
+    "page": "category-codes",
+    "viewport": "tablet-ipad",
+    "surfaces": []
+  },
+  {
+    "page": "card-tracking",
+    "viewport": "tablet-ipad",
+    "surfaces": []
+  },
+  {
+    "page": "settings",
+    "viewport": "tablet-ipad",
+    "surfaces": []
+  },
+  {
+    "page": "change-password",
+    "viewport": "tablet-ipad",
+    "surfaces": []
+  },
+  {
+    "page": "not-found",
+    "viewport": "tablet-ipad",
+    "surfaces": []
+  },
+  {
+    "page": "login",
+    "viewport": "mobile-iphone",
+    "surfaces": []
+  },
+  {
+    "page": "dashboard",
+    "viewport": "mobile-iphone",
+    "surfaces": []
+  },
+  {
+    "page": "cards",
+    "viewport": "mobile-iphone",
+    "surfaces": []
+  },
+  {
+    "page": "transactions",
+    "viewport": "mobile-iphone",
+    "surfaces": []
+  },
+  {
+    "page": "monthly-view",
+    "viewport": "mobile-iphone",
+    "surfaces": []
+  },
+  {
+    "page": "cashback-rules",
+    "viewport": "mobile-iphone",
+    "surfaces": []
+  },
+  {
+    "page": "category-codes",
+    "viewport": "mobile-iphone",
+    "surfaces": []
+  },
+  {
+    "page": "card-tracking",
+    "viewport": "mobile-iphone",
+    "surfaces": []
+  },
+  {
+    "page": "settings",
+    "viewport": "mobile-iphone",
+    "surfaces": []
+  },
+  {
+    "page": "change-password",
+    "viewport": "mobile-iphone",
+    "surfaces": []
+  },
+  {
+    "page": "not-found",
+    "viewport": "mobile-iphone",
+    "surfaces": []
+  }
+]

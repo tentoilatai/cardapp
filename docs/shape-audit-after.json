@@ -1,0 +1,515 @@
+{
+  "distinctBorderRadii": [
+    "3.35544e+07px"
+  ],
+  "distinctContainerRadii": [
+    "24px",
+    "16px"
+  ],
+  "nonCapsuleControlsCount": 0,
+  "subpixelAnomaliesCount": 311,
+  "nestedBackdropCount": 0,
+  "tableBackdropCount": 0,
+  "transformAnomaliesCount": 246,
+  "backdropFilterPerScreen": {
+    "login@desktop-1920": 0,
+    "overview@desktop-1920": 0,
+    "cards@desktop-1920": 0,
+    "transactions@desktop-1920": 0,
+    "monthly-view@desktop-1920": 0,
+    "cashback-rules@desktop-1920": 0,
+    "category-codes@desktop-1920": 0,
+    "card-tracking@desktop-1920": 0,
+    "settings@desktop-1920": 0,
+    "not-found@desktop-1920": 0,
+    "login@desktop-1366": 0,
+    "overview@desktop-1366": 3,
+    "cards@desktop-1366": 2,
+    "transactions@desktop-1366": 2,
+    "monthly-view@desktop-1366": 3,
+    "cashback-rules@desktop-1366": 2,
+    "category-codes@desktop-1366": 2,
+    "card-tracking@desktop-1366": 3,
+    "settings@desktop-1366": 2,
+    "not-found@desktop-1366": 2,
+    "login@tablet-768": 0,
+    "overview@tablet-768": 4,
+    "cards@tablet-768": 3,
+    "transactions@tablet-768": 3,
+    "monthly-view@tablet-768": 4,
+    "cashback-rules@tablet-768": 3,
+    "category-codes@tablet-768": 3,
+    "card-tracking@tablet-768": 4,
+    "settings@tablet-768": 3,
+    "not-found@tablet-768": 3,
+    "login@mobile-390": 0,
+    "overview@mobile-390": 0,
+    "cards@mobile-390": 0,
+    "transactions@mobile-390": 0,
+    "monthly-view@mobile-390": 0,
+    "cashback-rules@mobile-390": 0,
+    "category-codes@mobile-390": 0,
+    "card-tracking@mobile-390": 0,
+    "settings@mobile-390": 0,
+    "not-found@mobile-390": 0
+  },
+  "samples": {
+    "controlShapes": [],
+    "nestedBackdrops": [],
+    "tableBackdrops": [],
+    "subpixel": [
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "input",
+          "role": "",
+          "text": "",
+          "width": 320,
+          "height": 40,
+          "x": 800,
+          "y": 489.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "isTextarea": false,
+          "isCheckbox": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.70623 0.135149 -0.00636274 / 0.3) 0px 0px 0px 3px, rgba(255, 255, 255, 0.4) 0px 1px 1px 0px inset",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "input",
+          "role": "",
+          "text": "",
+          "width": 320,
+          "height": 40,
+          "x": 800,
+          "y": 569.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "isTextarea": false,
+          "isCheckbox": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.4) 0px 1px 1px 0px inset",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 28,
+          "height": 28,
+          "x": 1078,
+          "y": 575.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": true,
+          "isTextarea": false,
+          "isCheckbox": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "Đăng nhập",
+          "width": 320,
+          "height": 48,
+          "x": 800,
+          "y": 637.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "isTextarea": false,
+          "isCheckbox": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.70623 0.135149 -0.00636274 / 0.25) 0px 4px 6px -1px, oklab(0.70623 0.135149 -0.00636274 / 0.25) 0px 2px 4px -2px",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "input",
+          "role": "",
+          "text": "",
+          "width": 320,
+          "height": 40,
+          "x": 800,
+          "y": 489.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "isTextarea": false,
+          "isCheckbox": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.70623 0.135149 -0.00636274 / 0.3) 0px 0px 0px 3px, rgba(255, 255, 255, 0.4) 0px 1px 1px 0px inset",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "input",
+          "role": "",
+          "text": "",
+          "width": 320,
+          "height": 40,
+          "x": 800,
+          "y": 569.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "isTextarea": false,
+          "isCheckbox": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.4) 0px 1px 1px 0px inset",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 28,
+          "height": 28,
+          "x": 1078,
+          "y": 575.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": true,
+          "isTextarea": false,
+          "isCheckbox": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "Đăng nhập",
+          "width": 320,
+          "height": 48,
+          "x": 800,
+          "y": 637.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "isTextarea": false,
+          "isCheckbox": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.70623 0.135149 -0.00636274 / 0.25) 0px 4px 6px -1px, oklab(0.70623 0.135149 -0.00636274 / 0.25) 0px 2px 4px -2px",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "input",
+          "role": "",
+          "text": "",
+          "width": 320,
+          "height": 40,
+          "x": 800,
+          "y": 489.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "isTextarea": false,
+          "isCheckbox": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.70623 0.135149 -0.00636274 / 0.3) 0px 0px 0px 3px, rgba(255, 255, 255, 0.4) 0px 1px 1px 0px inset",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "input",
+          "role": "",
+          "text": "",
+          "width": 320,
+          "height": 40,
+          "x": 800,
+          "y": 569.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "isTextarea": false,
+          "isCheckbox": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.4) 0px 1px 1px 0px inset",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 28,
+          "height": 28,
+          "x": 1078,
+          "y": 575.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": true,
+          "isTextarea": false,
+          "isCheckbox": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "Đăng nhập",
+          "width": 320,
+          "height": 48,
+          "x": 800,
+          "y": 637.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "isTextarea": false,
+          "isCheckbox": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.70623 0.135149 -0.00636274 / 0.25) 0px 4px 6px -1px, oklab(0.70623 0.135149 -0.00636274 / 0.25) 0px 2px 4px -2px",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "transactions",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "input",
+          "role": "",
+          "text": "",
+          "width": 320,
+          "height": 40,
+          "x": 800,
+          "y": 489.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "isTextarea": false,
+          "isCheckbox": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.70623 0.135149 -0.00636274 / 0.3) 0px 0px 0px 3px, rgba(255, 255, 255, 0.4) 0px 1px 1px 0px inset",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "transactions",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "input",
+          "role": "",
+          "text": "",
+          "width": 320,
+          "height": 40,
+          "x": 800,
+          "y": 569.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": false,
+          "isTextarea": false,
+          "isCheckbox": false,
+          "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(255, 255, 255, 0.4) 0px 1px 1px 0px inset",
+          "backdropFilter": "none"
+        }
+      },
+      {
+        "page": "transactions",
+        "vp": "desktop-1920",
+        "item": {
+          "tag": "button",
+          "role": "",
+          "text": "",
+          "width": 28,
+          "height": 28,
+          "x": 1078,
+          "y": 575.5,
+          "borderRadius": "3.35544e+07px",
+          "isCapsule": true,
+          "isCircle": true,
+          "isTextarea": false,
+          "isCheckbox": false,
+          "boxShadow": "none",
+          "backdropFilter": "none"
+        }
+      }
+    ],
+    "transforms": [
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -top-[10%] -left-[6%]",
+          "transform": "matrix(1.02666, 0, 0, 1.02666, 15.9943, -21.3258)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute top-[20%] -right-[8%]",
+          "transform": "matrix(1.03143, 0, 0, 1.03143, -13.7514, 9.82244)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -bottom-[12%] left-[1",
+          "transform": "matrix(0.980779, 0, 0, 0.980779, 9.6104, 16.8182)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "login",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute top-[55%] right-[25%]",
+          "transform": "matrix(1.02666, 0, 0, 1.02666, 15.9943, -21.3258)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -top-[10%] -left-[6%]",
+          "transform": "matrix(1.01168, 0, 0, 1.01168, 7.00588, -9.34117)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute top-[20%] -right-[8%]",
+          "transform": "matrix(1.0132, 0, 0, 1.0132, -5.77328, 4.12378)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -bottom-[12%] left-[1",
+          "transform": "matrix(0.991731, 0, 0, 0.991731, 4.13447, 7.23532)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "overview",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute top-[55%] right-[25%]",
+          "transform": "matrix(1.01168, 0, 0, 1.01168, 7.00588, -9.34117)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -top-[10%] -left-[6%]",
+          "transform": "matrix(1.00676, 0, 0, 1.00676, 4.05739, -5.40985)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute top-[20%] -right-[8%]",
+          "transform": "matrix(1.0076, 0, 0, 1.0076, -3.32622, 2.37587)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -bottom-[12%] left-[1",
+          "transform": "matrix(0.995223, 0, 0, 0.995223, 2.38871, 4.18023)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "cards",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute top-[55%] right-[25%]",
+          "transform": "matrix(1.00676, 0, 0, 1.00676, 4.05739, -5.40985)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "transactions",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -top-[10%] -left-[6%]",
+          "transform": "matrix(1.00966, 0, 0, 1.00966, 5.79801, -7.73069)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "transactions",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute top-[20%] -right-[8%]",
+          "transform": "matrix(1.01089, 0, 0, 1.01089, -4.76504, 3.4036)",
+          "isAllowed": false
+        }
+      },
+      {
+        "page": "transactions",
+        "vp": "desktop-1920",
+        "transform": {
+          "tag": "div",
+          "className": "absolute -bottom-[12%] left-[1",
+          "transform": "matrix(0.993165, 0, 0, 0.993165, 3.4175, 5.98062)",
+          "isAllowed": false
+        }
+      }
+    ]
+  }
+}

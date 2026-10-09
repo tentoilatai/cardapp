@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CreditCardManager.Domain/CreditCardManager.Domain.csproj" />
+    <Project Path="src/CreditCardManager.Application/CreditCardManager.Application.csproj" />
+    <Project Path="src/CreditCardManager.Infrastructure/CreditCardManager.Infrastructure.csproj" />
+    <Project Path="src/CreditCardManager.Api/CreditCardManager.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/CreditCardManager.Tests/CreditCardManager.Tests.csproj" />
+  </Folder>
+</Solution>

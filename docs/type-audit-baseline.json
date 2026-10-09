@@ -1,0 +1,464 @@
+{
+  "summary": {
+    "distinctFontSizes": [
+      "10px",
+      "11px",
+      "12px",
+      "14px",
+      "16px",
+      "18px",
+      "20px",
+      "24px",
+      "28px"
+    ],
+    "distinctFontFamilies": [
+      "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+      "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace"
+    ],
+    "distinctFontWeights": [
+      "900",
+      "400",
+      "600",
+      "700",
+      "500"
+    ],
+    "distinctButtonHeights": [
+      24,
+      28,
+      30,
+      34,
+      42,
+      44,
+      48,
+      54,
+      159
+    ],
+    "distinctInputHeights": [
+      42,
+      50
+    ],
+    "totalAnomaliesFound": 169
+  },
+  "anomalies": [
+    {
+      "type": "text-below-12px",
+      "page": "login",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "p",
+        "text": "Phiên bản 2.0 Kính lỏng ·",
+        "fontSize": 11,
+        "lineHeight": 16.5,
+        "fontWeight": "400",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "overview",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Hoàn tiền",
+        "fontSize": 11,
+        "lineHeight": 16.5,
+        "fontWeight": "500",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "overview",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Admin",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "overview",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Chi tiêu",
+        "fontSize": 11,
+        "lineHeight": 16.5,
+        "fontWeight": "400",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "overview",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Hoàn tiền thực",
+        "fontSize": 11,
+        "lineHeight": 16.5,
+        "fontWeight": "400",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "overview",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "0",
+        "fontSize": 10,
+        "lineHeight": 13.3,
+        "fontWeight": "700",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "overview",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "11",
+        "fontSize": 10,
+        "lineHeight": 13.3,
+        "fontWeight": "700",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "cards",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Hoàn tiền",
+        "fontSize": 11,
+        "lineHeight": 16.5,
+        "fontWeight": "500",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "cards",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Admin",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "transactions",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Hoàn tiền",
+        "fontSize": 11,
+        "lineHeight": 16.5,
+        "fontWeight": "500",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "transactions",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Admin",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "monthly-view",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Hoàn tiền",
+        "fontSize": 11,
+        "lineHeight": 16.5,
+        "fontWeight": "500",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "monthly-view",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Admin",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "cashback-rules",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Hoàn tiền",
+        "fontSize": 11,
+        "lineHeight": 16.5,
+        "fontWeight": "500",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "cashback-rules",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Admin",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "category-codes",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Hoàn tiền",
+        "fontSize": 11,
+        "lineHeight": 16.5,
+        "fontWeight": "500",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "category-codes",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Admin",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "card-tracking",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Hoàn tiền",
+        "fontSize": 11,
+        "lineHeight": 16.5,
+        "fontWeight": "500",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "card-tracking",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "Admin",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "\"Be Vietnam Pro\", Inter, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "card-tracking",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "ACB-PLATINUM",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "card-tracking",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "HSBC-CASHBACK",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "card-tracking",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "MSB-MDIGI",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "card-tracking",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "OCB-JCBGOLD",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "card-tracking",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "SHB-SUPREME",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "card-tracking",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "TCB-EVERYDAY",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "card-tracking",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "UOB-ONE",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "card-tracking",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "VIB-MAXCARD",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "card-tracking",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "VIB-SUPERCARD",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "card-tracking",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "VPB-CIRCLE",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+        "role": ""
+      }
+    },
+    {
+      "type": "text-below-12px",
+      "page": "card-tracking",
+      "vp": "desktop-1920",
+      "item": {
+        "tag": "span",
+        "text": "VPB-JCBCARD",
+        "fontSize": 10,
+        "lineHeight": 15,
+        "fontWeight": "400",
+        "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+        "role": ""
+      }
+    }
+  ]
+}

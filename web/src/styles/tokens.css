@@ -1,0 +1,275 @@
+:root {
+  /* Global Glass Clarity Control (0-1, default 0.8) */
+  --glass-clarity: 0.8;
+  --glass-blur: 16px;
+  --glass-saturate: 1.7;
+  --glass-brightness: 1.08;
+
+  /* Directional Lighting & Elevations (Section 3 & 5) */
+  --light-angle: 135deg;
+  --elevation-0: none;
+  --elevation-1: 0 8px 24px rgba(226, 122, 161, 0.16), inset 0 1.5px 0 0 rgba(255, 255, 255, 0.60), inset 0 -1px 0 0 rgba(255, 255, 255, 0.08);
+  --elevation-2: 0 16px 40px rgba(226, 122, 161, 0.24), inset 0 2px 0 0 rgba(255, 255, 255, 0.75), inset 0 -1px 0 0 rgba(255, 255, 255, 0.12);
+
+  /* Surface Tiering (Section 4) */
+  /* Tier 1: Liquid đầy đủ (Nav, Topbar, Sidebar, Drawer, Dialog, Hero KPIs, Top-level GlassBlocks, Primary Buttons, Indicator Pills) */
+  --glass-bg-clear: linear-gradient(135deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.07) 100%);
+  --glass-bg-thick: linear-gradient(135deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.09) 100%);
+  --glass-bg-dense: linear-gradient(135deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.12) 100%);
+  
+  --glass-bg: var(--glass-bg-clear);
+  --glass-bg-subtle: rgba(255, 255, 255, 0.08);
+  --glass-bg-strong: var(--glass-bg-thick);
+  --glass-tint: rgba(226, 122, 161, 0.08);
+
+  /* Tier 2: Kính nhẹ - KHÔNG blur (StatCard, thẻ con, mobile list card, input, select, secondary button, chip, badge) */
+  --surface-tier2-bg: rgba(255, 255, 255, 0.10);
+  --surface-tier2-border: rgba(255, 255, 255, 0.40);
+  --surface-tier2-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.50);
+
+  /* Tier 3: Phẳng - Trong suốt, chữ sắc nét (DataTable rows, dense numeric lists, drawer body contents) */
+  --surface-tier3-bg: transparent;
+  --surface-tier3-border: rgba(255, 255, 255, 0.20);
+  --surface-tier3-hover: rgba(255, 255, 255, 0.08);
+  --surface-tier3-alt: rgba(255, 255, 255, 0.04);
+  
+  /* Borders & Specular Highlights */
+  --glass-border: rgba(255, 255, 255, 0.55);
+  --glass-border-subtle: rgba(255, 255, 255, 0.22);
+  --glass-highlight: rgba(255, 255, 255, 0.70);
+  
+  /* Saturated Tint Shadow & Specular Insets */
+  --glass-specular: inset 0 1.5px 0 0 rgba(255, 255, 255, 0.60), inset 0 -1px 0 0 rgba(255, 255, 255, 0.08);
+  --glass-shadow: var(--elevation-1);
+  --glass-shadow-hover: 0 14px 36px rgba(226, 122, 161, 0.26), inset 0 2px 0 0 rgba(255, 255, 255, 0.75), inset 0 -1px 0 0 rgba(255, 255, 255, 0.12);
+  --glass-shadow-dense: 0 8px 24px rgba(226, 122, 161, 0.14), var(--glass-specular);
+
+  --blur: var(--glass-blur);
+  --blur-medium: 12px;
+  --saturate: calc(var(--glass-saturate) * 100%);
+  
+  /* Unified Shape & Radius Scale (Section 2) */
+  /* Controls: Capsule 9999px */
+  --radius-control: 9999px;
+  --radius-pill: 9999px;
+  --radius-circle: 9999px;
+  --radius-checkbox: 6px;
+  --btn-radius: 9999px;
+  --control-radius: 9999px;
+
+  /* Container Scale: 12, 16, 24, 32 */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-card: var(--radius-lg);
+  --radius-dialog: var(--radius-lg);
+  --radius-sheet: var(--radius-xl);
+  
+  /* Concentric Nested Child Radius: r_child = r_parent - padding (min 8px) */
+  --radius-inner: calc(var(--radius-lg) - var(--block-padding));
+
+  /* Color Palette - Vibrant Saturated Accent */
+  --color-primary: #E27AA1;
+  --color-primary-light: #F8C8DC;
+  --color-primary-subtle: #FCE4EC;
+  --color-primary-hover: #D4668F;
+  --color-primary-active: #BF537B;
+  
+  /* Text Readability (WCAG AAA >= 7:1 main, >= 4.5:1 secondary) */
+  --color-text-main: #2C1E26;
+  --color-text-muted: #68515E;
+  --color-text-dim: #8E7583;
+  
+  --color-surface-base: #FFF5F8;
+  --color-surface-tint: #FCEEF4;
+
+  /* Status Colors (Saturated, crisp) */
+  --color-status-success: #059669;
+  --color-status-success-bg: rgba(5, 150, 105, 0.18);
+  --color-status-warning: #D97706;
+  --color-status-warning-bg: rgba(217, 119, 6, 0.18);
+  --color-status-caution: #EA580C;
+  --color-status-caution-bg: rgba(234, 88, 12, 0.18);
+  --color-status-danger: #E11D48;
+  --color-status-danger-bg: rgba(225, 29, 72, 0.18);
+
+  /* 8-Step Typography Scale Tokens */
+  --font-family-base: 'Be Vietnam Pro', Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Font Weights (Strict 3 weights: 400, 500, 600) */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  /* Scale: display (28/36 -> 24/32) */
+  --text-display-size: clamp(1.5rem, 1.25rem + 0.8vw, 1.75rem);
+  --text-display-lh: clamp(2rem, 1.75rem + 0.8vw, 2.25rem);
+  --text-display-weight: 600;
+
+  /* Scale: title-1 (20/28 -> 18/26) */
+  --text-title1-size: clamp(1.125rem, 1rem + 0.4vw, 1.25rem);
+  --text-title1-lh: clamp(1.625rem, 1.5rem + 0.4vw, 1.75rem);
+  --text-title1-weight: 600;
+
+  /* Scale: title-2 (16/24 -> 16/24) */
+  --text-title2-size: 1rem;
+  --text-title2-lh: 1.5rem;
+  --text-title2-weight: 600;
+
+  /* Scale: body (14/22 desktop, 15/22 mobile) */
+  --text-body-size: 0.875rem;
+  --text-body-lh: 1.375rem;
+  --text-body-weight: 400;
+
+  /* Scale: body-strong (14/22 desktop, 15/22 mobile) */
+  --text-bodystrong-size: 0.875rem;
+  --text-bodystrong-lh: 1.375rem;
+  --text-bodystrong-weight: 500;
+
+  /* Scale: label (13/18 -> 13/18) */
+  --text-label-size: 0.8125rem;
+  --text-label-lh: 1.125rem;
+  --text-label-weight: 500;
+
+  /* Scale: caption (12/16 -> 12/16) (FLOOR) */
+  --text-caption-size: 0.75rem;
+  --text-caption-lh: 1rem;
+  --text-caption-weight: 400;
+
+  /* Scale: caption-strong (12/16 -> 12/16) */
+  --text-captionstrong-size: 0.75rem;
+  --text-captionstrong-lh: 1rem;
+  --text-captionstrong-weight: 500;
+
+  /* Button Dimensions */
+  --btn-height-sm: 32px;
+  --btn-height-md: 40px;
+  --btn-height-lg: 48px;
+  --btn-px-sm: 12px;
+  --btn-px-md: 16px;
+  --btn-px-lg: 24px;
+  --btn-min-w-sm: 64px;
+  --btn-min-w-md: 88px;
+  --btn-max-w: 240px;
+
+  /* Control Dimensions (Input, Select, DatePicker) */
+  --control-height: 40px;
+  --control-px: 12px;
+
+  /* Icon Dimensions */
+  --icon-sm: 16px;
+  --icon-md: 20px;
+  --icon-lg: 24px;
+  --icon-stroke: 1.75px;
+
+  /* Spacing Scale (Multiples of 4) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-label-gap: 6px;
+
+  /* Standard Unified Layout Dimension Tokens */
+  --topbar-height: 64px;
+  --toolbar-height: 56px;
+  --footer-height: 48px;
+  --block-gap: 16px;
+  --block-padding: 20px;
+  --row-height: 48px;
+  --sidebar-width: 240px;
+  --bottom-nav-height: 64px;
+  --touch-target: 44px;
+  --mobile-topbar-height: 56px;
+  --page-gutter: 24px;
+  --action-bar-height: 64px;
+
+  /* Motion & Animation Timings (Section 4) */
+  --motion-micro: 120ms;
+  --motion-component: 200ms;
+  --motion-overlay: 320ms;
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.125);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --spring-stiffness: 260;
+  --spring-damping: 26;
+  --spring-mass: 0.9;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --page-gutter: 16px;
+    --block-gap: 12px;
+    --block-padding: 16px;
+    --glass-blur: 12px;
+    --blur: 12px;
+    --blur-medium: 8px;
+
+    /* Mobile Button & Control Heights */
+    --btn-height-sm: 40px;
+    --btn-height-md: 44px;
+    --btn-height-lg: 52px;
+    --control-height: 48px;
+    --action-bar-height: 72px;
+
+    /* Mobile Text Sizes */
+    --text-body-size: 0.9375rem; /* 15px */
+    --text-bodystrong-size: 0.9375rem; /* 15px */
+  }
+}
+
+@media (pointer: coarse) {
+  :root {
+    --glass-blur: 12px;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root {
+    --glass-blur: 8px;
+    --glass-saturate: 1.3;
+  }
+}
+
+.dark {
+  /* Dark Mode Liquid Glass Tokens */
+  --elevation-1: 0 10px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 0 rgba(255, 255, 255, 0.04);
+  --elevation-2: 0 20px 48px rgba(0, 0, 0, 0.60), inset 0 1.5px 0 0 rgba(255, 255, 255, 0.35);
+
+  --glass-bg-clear: linear-gradient(135deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.03) 100%);
+  --glass-bg-thick: linear-gradient(135deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.05) 100%);
+  --glass-bg-dense: linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.06) 100%);
+  
+  --glass-bg: var(--glass-bg-clear);
+  --glass-bg-subtle: rgba(255, 255, 255, 0.05);
+  --glass-bg-strong: var(--glass-bg-thick);
+  --glass-tint: rgba(226, 122, 161, 0.14);
+
+  --surface-tier2-bg: rgba(255, 255, 255, 0.06);
+  --surface-tier2-border: rgba(255, 255, 255, 0.14);
+  --surface-tier2-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.16);
+
+  --surface-tier3-bg: transparent;
+  --surface-tier3-border: rgba(255, 255, 255, 0.10);
+  --surface-tier3-hover: rgba(255, 255, 255, 0.05);
+  --surface-tier3-alt: rgba(255, 255, 255, 0.02);
+  
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-border-subtle: rgba(255, 255, 255, 0.09);
+  --glass-highlight: rgba(255, 255, 255, 0.30);
+  
+  --glass-specular: inset 0 1px 0 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 0 rgba(255, 255, 255, 0.04);
+  --glass-shadow: var(--elevation-1);
+  --glass-shadow-hover: 0 20px 48px rgba(0, 0, 0, 0.60), inset 0 1.5px 0 0 rgba(255, 255, 255, 0.35);
+  --glass-shadow-dense: 0 8px 28px rgba(0, 0, 0, 0.40), var(--glass-specular);
+  
+  --color-text-main: #FFFFFF;
+  --color-text-muted: #D8C9D2;
+  --color-text-dim: #9E8B97;
+  
+  --color-surface-base: #120A10;
+  --color-surface-tint: #1C111A;
+}
