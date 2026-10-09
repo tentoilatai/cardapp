@@ -174,19 +174,25 @@ export const SettingsPage: React.FC = () => {
     setPasswordError('');
     setPasswordSuccess(false);
 
-    if (passwordForm.newPassword !== passwordForm.confirmPassword) {
-      setPasswordError(vi.errors.passwordMismatch);
+    if (!passwordForm.newPassword) {
+      setPasswordError('Vui lòng nhập mật khẩu mới.');
       return;
     }
 
-    if (passwordForm.newPassword.length < 10) {
-      setPasswordError(vi.errors.passwordLength);
+    if (passwordForm.newPassword.length < 6) {
+      setPasswordError('Mật khẩu mới phải có tối thiểu 6 ký tự.');
+      return;
+    }
+
+    if (passwordForm.newPassword !== passwordForm.confirmPassword) {
+      setPasswordError(vi.errors.passwordMismatch);
       return;
     }
 
     changePasswordMutation.mutate({
       currentPassword: passwordForm.currentPassword,
       newPassword: passwordForm.newPassword,
+      confirmPassword: passwordForm.confirmPassword,
     });
   };
 
@@ -346,12 +352,12 @@ export const SettingsPage: React.FC = () => {
             </div>
 
             {/* Visual Zone Indicator */}
-            <div className="space-y-1.5 p-3.5 rounded-[16px] glass-surface-tier2 border border-white/40 dark:border-white/10">
-              <div className="flex items-center justify-between text-xs font-semibold text-[#826B76] dark:text-[#BDACB5]">
+            <div className="space-y-1.5 p-3.5 rounded-[16px] bg-white dark:bg-[#181822] border border-[#E8EAEF] dark:border-[#262634] shadow-2xs">
+              <div className="flex items-center justify-between text-xs font-semibold text-[#6B7280] dark:text-[#9CA3AF]">
                 <span>Phân vùng cảnh báo tỷ lệ sử dụng</span>
                 <span className="font-mono">100%</span>
               </div>
-              <div className="h-3 w-full rounded-full bg-black/5 dark:bg-white/5 overflow-hidden flex p-0.5 border border-white/60 dark:border-white/10">
+              <div className="h-3 w-full rounded-full bg-black/5 dark:bg-white/5 overflow-hidden flex p-0.5 border border-[#E5E7EB] dark:border-[#2D2D3C]">
                 <div style={{ width: `${mildVal}%` }} className="bg-emerald-400 rounded-l-full transition-all" />
                 <div style={{ width: `${Math.max(0, warnVal - mildVal)}%` }} className="bg-amber-400 transition-all" />
                 <div style={{ width: `${Math.max(0, dangVal - warnVal)}%` }} className="bg-orange-400 transition-all" />
@@ -361,8 +367,8 @@ export const SettingsPage: React.FC = () => {
 
             {/* 2 Additional Settings Inputs */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div className="p-3.5 rounded-[16px] glass-surface-tier2 border border-white/40 dark:border-white/10 space-y-1.5">
-                <div className="flex items-center justify-between text-xs font-semibold text-[#3B2A33] dark:text-[#F6EDF2]">
+              <div className="p-3.5 rounded-[16px] bg-white dark:bg-[#181822] border border-[#E8EAEF] dark:border-[#262634] shadow-2xs space-y-1.5">
+                <div className="flex items-center justify-between text-xs font-semibold text-[#111827] dark:text-[#FFFFFF]">
                   <span className="flex items-center gap-1.5">
                     <Clock className="w-3.5 h-3.5 text-purple-500" />
                     {vi.settings.dueSoonDays}
@@ -381,8 +387,8 @@ export const SettingsPage: React.FC = () => {
                 />
               </div>
 
-              <div className="p-3.5 rounded-[16px] glass-surface-tier2 border border-white/40 dark:border-white/10 space-y-1.5">
-                <div className="flex items-center justify-between text-xs font-semibold text-[#3B2A33] dark:text-[#F6EDF2]">
+              <div className="p-3.5 rounded-[16px] bg-white dark:bg-[#181822] border border-[#E8EAEF] dark:border-[#262634] shadow-2xs space-y-1.5">
+                <div className="flex items-center justify-between text-xs font-semibold text-[#111827] dark:text-[#FFFFFF]">
                   <span className="flex items-center gap-1.5">
                     <Percent className="w-3.5 h-3.5 text-pink-500" />
                     {vi.settings.nearCapThreshold}
@@ -411,15 +417,15 @@ export const SettingsPage: React.FC = () => {
           icon={<Building2 className="w-4 h-4" />}
           testId="settings-banks-block"
           footer={
-            <div className="w-full flex items-center justify-between text-xs text-[#826B76]">
-              <span>Tổng cộng: <strong className="text-[#3B2A33] dark:text-[#F6EDF2] font-mono">{banksCount}</strong></span>
+            <div className="w-full flex items-center justify-between text-xs text-[#6B7280]">
+              <span>Tổng cộng: <strong className="text-[#111827] dark:text-[#FFFFFF] font-mono">{banksCount}</strong></span>
               <span>Dùng trong danh mục thẻ tín dụng</span>
             </div>
           }
           bodyClassName="p-0 flex flex-col h-full min-h-0 overflow-hidden"
         >
           {/* Cố định thanh nhập & nút Thêm ở trên cùng */}
-          <div className="p-4 sm:p-5 border-b border-black/5 dark:border-white/10 shrink-0 glass-surface-tier2">
+          <div className="p-4 sm:p-5 border-b border-[#F0F1F4] dark:border-[#262634] shrink-0 bg-[#FAFAFC] dark:bg-[#1A1A26]">
             <div className="flex items-center gap-3">
               <div className="flex-1">
                 <GlassInput
@@ -450,11 +456,11 @@ export const SettingsPage: React.FC = () => {
             {settings.banks.map((b) => (
               <div
                 key={b}
-                className="flex items-center justify-between p-3 px-4 rounded-[12px] glass-surface-tier2 hover:bg-white/80 dark:hover:bg-white/10 border border-white/40 dark:border-white/10 text-xs sm:text-sm"
+                className="flex items-center justify-between p-3 px-4 rounded-[12px] bg-white dark:bg-[#181822] hover:border-[#E27AA1]/40 border border-[#E8EAEF] dark:border-[#262634] shadow-2xs text-xs sm:text-sm"
               >
                 <div className="flex items-center gap-2.5">
-                  <Building2 className="w-4 h-4 text-[#826B76]" />
-                  <span className="font-semibold text-[#3B2A33] dark:text-[#F6EDF2]">{b}</span>
+                  <Building2 className="w-4 h-4 text-[#6B7280]" />
+                  <span className="font-semibold text-[#111827] dark:text-[#FFFFFF]">{b}</span>
                 </div>
                 <GlassButton
                   variant="ghost"
@@ -479,15 +485,15 @@ export const SettingsPage: React.FC = () => {
           icon={<Tag className="w-4 h-4" />}
           testId="settings-categories-block"
           footer={
-            <div className="w-full flex items-center justify-between text-xs text-[#826B76]">
-              <span>Tổng cộng: <strong className="text-[#3B2A33] dark:text-[#F6EDF2] font-mono">{categoriesCount}</strong></span>
+            <div className="w-full flex items-center justify-between text-xs text-[#6B7280]">
+              <span>Tổng cộng: <strong className="text-[#111827] dark:text-[#FFFFFF] font-mono">{categoriesCount}</strong></span>
               <span>Dùng để phân loại quy tắc & báo cáo</span>
             </div>
           }
           bodyClassName="p-0 flex flex-col h-full min-h-0 overflow-hidden"
         >
           {/* Cố định thanh nhập & nút Thêm ở trên cùng */}
-          <div className="p-4 sm:p-5 border-b border-black/5 dark:border-white/10 shrink-0 glass-surface-tier2">
+          <div className="p-4 sm:p-5 border-b border-[#F0F1F4] dark:border-[#262634] shrink-0 bg-[#FAFAFC] dark:bg-[#1A1A26]">
             <div className="flex items-center gap-3">
               <div className="flex-1">
                 <GlassInput
@@ -518,11 +524,11 @@ export const SettingsPage: React.FC = () => {
             {settings.categories.map((cat) => (
               <div
                 key={cat}
-                className="flex items-center justify-between p-3 px-4 rounded-[12px] glass-surface-tier2 hover:bg-white/80 dark:hover:bg-white/10 border border-white/40 dark:border-white/10 text-xs sm:text-sm"
+                className="flex items-center justify-between p-3 px-4 rounded-[12px] bg-white dark:bg-[#181822] hover:border-[#E27AA1]/40 border border-[#E8EAEF] dark:border-[#262634] shadow-2xs text-xs sm:text-sm"
               >
                 <div className="flex items-center gap-2.5">
-                  <Tag className="w-4 h-4 text-[#826B76]" />
-                  <span className="font-semibold text-[#3B2A33] dark:text-[#F6EDF2]">{cat}</span>
+                  <Tag className="w-4 h-4 text-[#6B7280]" />
+                  <span className="font-semibold text-[#111827] dark:text-[#FFFFFF]">{cat}</span>
                 </div>
                 <GlassButton
                   variant="ghost"
@@ -562,13 +568,13 @@ export const SettingsPage: React.FC = () => {
           bodyClassName="p-4 sm:p-6 space-y-4"
         >
           {/* User Account Chip */}
-          <div className="p-3.5 rounded-[16px] glass-surface-tier2 border border-white/40 dark:border-white/10 flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#E27AA1]/15 text-[#E27AA1] flex items-center justify-center font-semibold">
+          <div className="p-3.5 rounded-[16px] bg-white dark:bg-[#181822] border border-[#E8EAEF] dark:border-[#262634] shadow-2xs flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-pink-500/10 text-[#E27AA1] flex items-center justify-center font-semibold">
               <UserCheck className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-xs text-[#826B76] dark:text-[#BDACB5]">Tài khoản hiện tại</div>
-              <div className="text-sm font-semibold text-[#3B2A33] dark:text-[#F6EDF2]">
+              <div className="text-xs text-[#6B7280] dark:text-[#9CA3AF]">Tài khoản hiện tại</div>
+              <div className="text-sm font-semibold text-[#111827] dark:text-[#FFFFFF]">
                 taitv <span className="text-xs font-semibold text-[#E27AA1]">(Quản trị viên)</span>
               </div>
             </div>
@@ -620,8 +626,8 @@ export const SettingsPage: React.FC = () => {
             />
           </form>
 
-          <div className="p-3 rounded-[12px] bg-black/5 dark:bg-white/5 text-xs text-[#826B76] dark:text-[#BDACB5] space-y-1">
-            <div className="font-semibold text-[#3B2A33] dark:text-[#F6EDF2]">Yêu cầu mật khẩu:</div>
+          <div className="p-3 rounded-[12px] bg-black/5 dark:bg-white/5 text-xs text-[#6B7280] dark:text-[#9CA3AF] space-y-1">
+            <div className="font-semibold text-[#111827] dark:text-[#FFFFFF]">Yêu cầu mật khẩu:</div>
             <div>• Tối thiểu 10 ký tự</div>
             <div>• Chứa chữ hoa (A-Z), chữ thường (a-z), chữ số (0-9) và ký tự đặc biệt (!@#$%^&*)</div>
           </div>
@@ -634,7 +640,7 @@ export const SettingsPage: React.FC = () => {
           icon={<FileSpreadsheet className="w-4 h-4" />}
           testId="settings-export-block"
           footer={
-            <div className="w-full flex items-center justify-between text-xs text-[#826B76]">
+            <div className="w-full flex items-center justify-between text-xs text-[#6B7280]">
               <span>Định dạng tệp .xlsx</span>
               <span>Bao gồm 4 bảng dữ liệu</span>
             </div>
@@ -642,35 +648,35 @@ export const SettingsPage: React.FC = () => {
           bodyClassName="p-4 sm:p-6 space-y-4"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-            <div className="p-3 rounded-[12px] glass-surface-tier2 border border-white/40 dark:border-white/10 flex items-center gap-2.5">
+            <div className="p-3 rounded-[12px] bg-white dark:bg-[#181822] border border-[#E8EAEF] dark:border-[#262634] shadow-2xs flex items-center gap-2.5">
               <CreditCard className="w-4 h-4 text-[#E27AA1]" />
               <div>
-                <strong className="block text-[#3B2A33] dark:text-[#F6EDF2]">1. Danh sách Thẻ</strong>
-                <span className="text-[#826B76] dark:text-[#BDACB5]">Hạn mức, chu kỳ sao kê</span>
+                <strong className="block text-[#111827] dark:text-[#FFFFFF]">1. Danh sách Thẻ</strong>
+                <span className="text-[#6B7280] dark:text-[#9CA3AF]">Hạn mức, chu kỳ sao kê</span>
               </div>
             </div>
 
-            <div className="p-3 rounded-[12px] glass-surface-tier2 border border-white/40 dark:border-white/10 flex items-center gap-2.5">
+            <div className="p-3 rounded-[12px] bg-white dark:bg-[#181822] border border-[#E8EAEF] dark:border-[#262634] shadow-2xs flex items-center gap-2.5">
               <Percent className="w-4 h-4 text-purple-600 dark:text-purple-400" />
               <div>
-                <strong className="block text-[#3B2A33] dark:text-[#F6EDF2]">2. Quy tắc hoàn tiền</strong>
-                <span className="text-[#826B76] dark:text-[#BDACB5]">Tỷ lệ %, trần hoàn tiền</span>
+                <strong className="block text-[#111827] dark:text-[#FFFFFF]">2. Quy tắc hoàn tiền</strong>
+                <span className="text-[#6B7280] dark:text-[#9CA3AF]">Tỷ lệ %, trần hoàn tiền</span>
               </div>
             </div>
 
-            <div className="p-3 rounded-[12px] glass-surface-tier2 border border-white/40 dark:border-white/10 flex items-center gap-2.5">
+            <div className="p-3 rounded-[12px] bg-white dark:bg-[#181822] border border-[#E8EAEF] dark:border-[#262634] shadow-2xs flex items-center gap-2.5">
               <Tag className="w-4 h-4 text-amber-600 dark:text-amber-400" />
               <div>
-                <strong className="block text-[#3B2A33] dark:text-[#F6EDF2]">3. Mã ngành MCC</strong>
-                <span className="text-[#826B76] dark:text-[#BDACB5]">Phân loại ngành tiêu dùng</span>
+                <strong className="block text-[#111827] dark:text-[#FFFFFF]">3. Mã ngành MCC</strong>
+                <span className="text-[#6B7280] dark:text-[#9CA3AF]">Phân loại ngành tiêu dùng</span>
               </div>
             </div>
 
-            <div className="p-3 rounded-[12px] glass-surface-tier2 border border-white/40 dark:border-white/10 flex items-center gap-2.5">
+            <div className="p-3 rounded-[12px] bg-white dark:bg-[#181822] border border-[#E8EAEF] dark:border-[#262634] shadow-2xs flex items-center gap-2.5">
               <Layers className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
               <div>
-                <strong className="block text-[#3B2A33] dark:text-[#F6EDF2]">4. Sổ giao dịch</strong>
-                <span className="text-[#826B76] dark:text-[#BDACB5]">Lịch sử và hoàn tiền</span>
+                <strong className="block text-[#111827] dark:text-[#FFFFFF]">4. Sổ giao dịch</strong>
+                <span className="text-[#6B7280] dark:text-[#9CA3AF]">Lịch sử và hoàn tiền</span>
               </div>
             </div>
           </div>

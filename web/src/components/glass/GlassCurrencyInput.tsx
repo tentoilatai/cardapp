@@ -137,11 +137,11 @@ export const GlassCurrencyInput = forwardRef<HTMLInputElement, GlassCurrencyInpu
     <div className={twMerge('w-full flex flex-col gap-[6px]', className)}>
       {label && (
         <div className="flex items-center justify-between">
-          <label htmlFor={inputId} data-role="field-label" className="text-[0.8125rem] leading-[1.125rem] font-medium text-[#68515E] dark:text-[#D8C9D2] block select-none">
+          <label htmlFor={inputId} data-role="field-label" className="text-[0.8125rem] leading-[1.125rem] font-medium text-[#4B5563] dark:text-[#9CA3AF] block select-none">
             {label}
           </label>
           {showWords && wordPreview && (
-            <span data-role="caption" className="text-[0.75rem] font-medium text-[#E27AA1] bg-[#E27AA1]/12 px-2.5 py-0.5 rounded-full border border-[#E27AA1]/25">
+            <span data-role="caption" className="text-[0.75rem] font-medium text-[#E27AA1] bg-pink-500/10 px-2.5 py-0.5 rounded-full border border-pink-500/20">
               ≈ {wordPreview}
             </span>
           )}
@@ -150,7 +150,7 @@ export const GlassCurrencyInput = forwardRef<HTMLInputElement, GlassCurrencyInpu
 
       <div className="relative flex items-center w-full">
         {leftIcon && (
-          <span className="absolute left-3.5 text-[#68515E] dark:text-[#D8C9D2] pointer-events-none z-10 flex items-center justify-center">
+          <span className="absolute left-3.5 text-[#6B7280] dark:text-[#9CA3AF] pointer-events-none z-10 flex items-center justify-center">
             {leftIcon}
           </span>
         )}
@@ -169,13 +169,13 @@ export const GlassCurrencyInput = forwardRef<HTMLInputElement, GlassCurrencyInpu
           className={twMerge(
             clsx(
               'w-full px-4 h-[40px] max-md:h-[48px] rounded-full text-[0.875rem] max-md:text-[1rem] leading-[1.375rem] font-normal',
-              'text-[#2C1E26] dark:text-[#FFFFFF] bg-white/20 dark:bg-white/05 placeholder-[#8E7583] dark:placeholder-[#9E8B97]',
-              'border border-white/50 dark:border-white/15 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]',
+              'text-[#111827] dark:text-[#FFFFFF] bg-white dark:bg-[#1E1E2A] placeholder-[#9CA3AF] dark:placeholder-[#6B7280]',
+              'border border-[#E5E7EB] dark:border-[#2D2D3C] shadow-2xs',
               'transition-all duration-200 outline-none tabular-nums',
-              'focus:border-[#E27AA1] focus:ring-3 focus:ring-[#E27AA1]/30',
+              'focus:border-[#E27AA1] focus:ring-2 focus:ring-[#E27AA1]/20',
               leftIcon && 'pl-10',
               unit && 'pr-12',
-              error && 'border-[#E11D48] focus:border-[#E11D48] focus:ring-[#E11D48]/30',
+              error && 'border-[#E11D48] focus:border-[#E11D48] focus:ring-[#E11D48]/20',
               disabled && 'opacity-40 cursor-not-allowed pointer-events-none',
               inputClassName
             )
@@ -183,7 +183,7 @@ export const GlassCurrencyInput = forwardRef<HTMLInputElement, GlassCurrencyInpu
         />
 
         {unit && (
-          <div data-role="caption" className="absolute right-3.5 text-[0.75rem] font-medium text-[#68515E] dark:text-[#D8C9D2] pointer-events-none select-none bg-white/40 dark:bg-white/10 px-2 py-0.5 rounded-full border border-white/40 dark:border-white/10">
+          <div data-role="caption" className="absolute right-3.5 text-[0.75rem] font-medium text-[#6B7280] dark:text-[#9CA3AF] pointer-events-none select-none bg-[#F3F4F6] dark:bg-[#282836] px-2 py-0.5 rounded-full border border-[#E5E7EB] dark:border-[#2E2E3C]">
             {unit}
           </div>
         )}

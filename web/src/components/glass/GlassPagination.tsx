@@ -62,8 +62,8 @@ export const GlassPagination: React.FC<GlassPaginationProps> = ({
   return (
     <div
       className={clsx(
-        'p-3 sm:px-4 sm:py-2.5 glass-surface-clear',
-        'border-t border-white/60 dark:border-white/10',
+        'p-3 sm:px-4 sm:py-2.5 bg-transparent',
+        'border-t border-[#E5E7EB] dark:border-[#262634]',
         'flex flex-col sm:flex-row items-center justify-between gap-3 text-[12px] leading-[16px] text-[#68515E] dark:text-[#D8C9D2]',
         className
       )}
@@ -89,7 +89,7 @@ export const GlassPagination: React.FC<GlassPaginationProps> = ({
                   label: `${size} / trang`
                 }))}
                 size="sm"
-                triggerClassName="min-h-[32px] py-1 px-2.5 text-[12px] glass-surface-clear"
+                triggerClassName="min-h-[32px] py-1 px-2.5 text-[12px] bg-white dark:bg-[#1E1E2A]"
               />
             </div>
           </div>
@@ -105,7 +105,7 @@ export const GlassPagination: React.FC<GlassPaginationProps> = ({
           onClick={() => onPageChange(1)}
           className={clsx(
             'w-8 h-8 rounded-full flex items-center justify-center transition-all',
-            'border border-white/60 dark:border-white/10 glass-surface-clear hover:bg-white/40 dark:hover:bg-white/20 text-[#2C1E26] dark:text-[#FFFFFF] shadow-2xs',
+            'border border-[#E5E7EB] dark:border-[#262634] bg-white dark:bg-[#1E1E2A] hover:bg-gray-50 dark:hover:bg-[#252535] text-[#2C1E26] dark:text-[#FFFFFF] shadow-2xs',
             'disabled:opacity-40 disabled:pointer-events-none disabled:shadow-none'
           )}
           title="Trang đầu"
@@ -121,7 +121,7 @@ export const GlassPagination: React.FC<GlassPaginationProps> = ({
           onClick={() => onPageChange(Math.max(1, currentPage - 1))}
           className={clsx(
             'w-8 h-8 rounded-full flex items-center justify-center transition-all',
-            'border border-white/60 dark:border-white/10 glass-surface-clear hover:bg-white/40 dark:hover:bg-white/20 text-[#2C1E26] dark:text-[#FFFFFF] shadow-2xs',
+            'border border-[#E5E7EB] dark:border-[#262634] bg-white dark:bg-[#1E1E2A] hover:bg-gray-50 dark:hover:bg-[#252535] text-[#2C1E26] dark:text-[#FFFFFF] shadow-2xs',
             'disabled:opacity-40 disabled:pointer-events-none disabled:shadow-none'
           )}
           title="Trang trước"
@@ -151,7 +151,7 @@ export const GlassPagination: React.FC<GlassPaginationProps> = ({
                   'min-w-[32px] h-8 px-2 rounded-full text-[13px] leading-[18px] font-medium transition-all',
                   isCurrent
                     ? 'bg-gradient-to-r from-[#E27AA1] to-[#F092B5] text-white shadow-xs ring-2 ring-[#E27AA1]/25 font-semibold'
-                    : 'glass-surface-clear hover:bg-white/40 dark:hover:bg-white/20 text-[#2C1E26] dark:text-[#FFFFFF] border border-white/60 dark:border-white/10 shadow-2xs'
+                    : 'bg-white dark:bg-[#1E1E2A] hover:bg-gray-50 dark:hover:bg-[#252535] text-[#2C1E26] dark:text-[#FFFFFF] border border-[#E5E7EB] dark:border-[#262634] shadow-2xs'
                 )}
                 aria-current={isCurrent ? 'page' : undefined}
               >
@@ -173,7 +173,7 @@ export const GlassPagination: React.FC<GlassPaginationProps> = ({
           onClick={() => onPageChange(Math.min(safeTotalPages, currentPage + 1))}
           className={clsx(
             'w-8 h-8 rounded-full flex items-center justify-center transition-all',
-            'border border-white/60 dark:border-white/10 glass-surface-clear hover:bg-white/40 dark:hover:bg-white/20 text-[#2C1E26] dark:text-[#FFFFFF] shadow-2xs',
+            'border border-[#E5E7EB] dark:border-[#262634] bg-white dark:bg-[#1E1E2A] hover:bg-gray-50 dark:hover:bg-[#252535] text-[#2C1E26] dark:text-[#FFFFFF] shadow-2xs',
             'disabled:opacity-40 disabled:pointer-events-none disabled:shadow-none'
           )}
           title="Trang sau"
@@ -189,7 +189,7 @@ export const GlassPagination: React.FC<GlassPaginationProps> = ({
           onClick={() => onPageChange(safeTotalPages)}
           className={clsx(
             'w-8 h-8 rounded-full flex items-center justify-center transition-all',
-            'border border-white/60 dark:border-white/10 glass-surface-clear hover:bg-white/40 dark:hover:bg-white/20 text-[#2C1E26] dark:text-[#FFFFFF] shadow-2xs',
+            'border border-[#E5E7EB] dark:border-[#262634] bg-white dark:bg-[#1E1E2A] hover:bg-gray-50 dark:hover:bg-[#252535] text-[#2C1E26] dark:text-[#FFFFFF] shadow-2xs',
             'disabled:opacity-40 disabled:pointer-events-none disabled:shadow-none'
           )}
           title="Trang cuối"

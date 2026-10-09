@@ -78,23 +78,23 @@
   }
 }
 
-/* Unified 3-Tier Surface Layering (Section 4) */
+/* Unified Surface Layering (Clean Modern Style) */
 
-/* Tier 1: Full Liquid (Nav, Topbar, Sidebar, Drawer, Dialog, Sheet, Top-level GlassBlock, Primary Button, Active Pill Indicator) */
+/* Tier 1: Elevated Top-level Surface (Nav, Topbar, Sidebar, Drawer, Dialog, Sheet) */
 .glass-surface-tier1,
 .glass-surface-clear,
 .glass-surface,
 .glass-surface-thick,
 .glass-surface-dense {
   background: var(--glass-bg-clear);
-  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(var(--glass-brightness));
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate)) brightness(var(--glass-brightness));
   border: 1px solid var(--glass-border);
   box-shadow: var(--elevation-1);
   border-radius: var(--radius-card);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
 }
 
-/* Tier 2: Light Glass - NO blur (StatCard, child cards, mobile list card, input, select, secondary button, chip, badge, toolbar inside block) */
+/* Tier 2: Clean Card Surface (StatCard, list items, inputs, control containers) */
 .glass-surface-tier2,
 .glass-surface-subtle {
   background: var(--surface-tier2-bg);
@@ -105,7 +105,7 @@
   -webkit-backdrop-filter: none !important;
 }
 
-/* Tier 3: Flat - Crisp transparent readability (DataTable body, rows, dense lists, chart areas, modal body contents) */
+/* Tier 3: Flat Transparent (DataTable body rows, dense lists) */
 .glass-surface-tier3 {
   background: var(--surface-tier3-bg);
   border: 1px solid var(--surface-tier3-border);
@@ -123,83 +123,6 @@
   [data-role="glass-block"],
   [data-role="stat-card"] {
     corner-shape: squircle;
-  }
-}
-
-/* Local text scrim for dense numeric clarity without blanket opacity */
-.glass-scrim {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.12) 100%);
-  border-radius: var(--radius-md);
-}
-.dark .glass-scrim {
-  background: linear-gradient(180deg, rgba(20, 10, 18, 0.35) 0%, rgba(20, 10, 18, 0.12) 100%);
-}
-
-/* Subtle Shimmer Highlight */
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-.shimmer-active::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.30) 50%,
-    transparent 100%
-  );
-  animation: shimmer 2.2s infinite ease-in-out;
-  pointer-events: none;
-}
-
-/* Soft Aurora background fluid blob animations */
-@keyframes blob-float-1 {
-  0%, 100% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -40px) scale(1.05); }
-  66% { transform: translate(-20px, 20px) scale(0.96); }
-}
-
-@keyframes blob-float-2 {
-  0%, 100% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(-35px, 25px) scale(1.08); }
-  66% { transform: translate(25px, -25px) scale(0.94); }
-}
-
-@keyframes blob-float-3 {
-  0%, 100% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(20px, 35px) scale(0.96); }
-  66% { transform: translate(-30px, -20px) scale(1.04); }
-}
-
-.animate-blob-1 {
-  animation: blob-float-1 32s infinite ease-in-out;
-}
-
-.animate-blob-2 {
-  animation: blob-float-2 38s infinite ease-in-out;
-}
-
-.animate-blob-3 {
-  animation: blob-float-3 34s infinite ease-in-out;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  .animate-blob-1, .animate-blob-2, .animate-blob-3 {
-    animation: none !important;
-  }
-  .shimmer-active::after {
-    animation: none !important;
   }
 }
 

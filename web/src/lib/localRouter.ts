@@ -12,9 +12,24 @@ export async function handleLocalRequest<T>(url: string, method: string, body?: 
     if (!user) throw new Error('Unauthorized');
     return user as unknown as T;
   }
+  if (path === '/api/auth/register') {
+    const { username, password, fullName } = body || {};
+    if (!username || !username.trim()) throw new Error('Vui lòng nhập tên đăng nhập');
+    if (!password || password.length < 6) throw new Error('Mật khẩu phải có tối thiểu 6 ký tự');
+    const newUser = localDb.registerUser({
+      username: username.trim(),
+      password,
+      fullName: fullName?.trim() || username.trim()
+    });
+    return newUser as unknown as T;
+  }
   if (path === '/api/auth/login') {
-    const user = { username: body?.username || 'taitv', roles: ['Admin'], mustChangePassword: false };
-    localDb.setUser(user);
+    const { username, password } = body || {};
+    if (!username || !username.trim()) throw new Error('Vui lòng nhập tên đăng nhập');
+    const user = localDb.verifyCredentials(username.trim(), password);
+    if (!user) {
+      throw new Error('Tên đăng nhập hoặc mật khẩu không chính xác');
+    }
     return user as unknown as T;
   }
   if (path === '/api/auth/logout') {
@@ -23,11 +38,17 @@ export async function handleLocalRequest<T>(url: string, method: string, body?: 
   }
   if (path === '/api/auth/change-password') {
     const user = localDb.getUser();
-    if (user) {
-      user.mustChangePassword = false;
-      localDb.setUser(user);
+    if (!user) throw new Error('Unauthorized');
+    const { currentPassword, newPassword, confirmPassword } = body || {};
+    if (!newPassword || newPassword.length < 6) {
+      throw new Error('Mật khẩu mới phải có tối thiểu 6 ký tự');
     }
-    return {} as T;
+    if (confirmPassword && newPassword !== confirmPassword) {
+      throw new Error('Xác nhận mật khẩu mới không khớp');
+    }
+    localDb.updateUserPassword(user.username, currentPassword, newPassword);
+    const updatedUser = localDb.getUser();
+    return (updatedUser || {}) as unknown as T;
   }
 
   // 2. Cards routes

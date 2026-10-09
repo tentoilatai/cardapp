@@ -248,23 +248,23 @@ export const TrackerPage: React.FC = () => {
                         handleSelectCard(card.cardId);
                       }
                     }}
-                    className={`w-full text-left p-4 rounded-[16px] border transition-all cursor-pointer ${
+                    className={`w-full text-left p-4 rounded-2xl border transition-all cursor-pointer ${
                       isSelected
-                        ? 'bg-white/95 border-[#E27AA1]/60 shadow-md ring-2 ring-[#E27AA1]/30'
-                        : 'glass-surface-tier2 hover:bg-white/80 border-white/40 dark:border-white/10 shadow-xs'
+                        ? 'bg-white dark:bg-[#1E1E2A] border-[#E27AA1] shadow-sm ring-2 ring-[#E27AA1]/20'
+                        : 'bg-white dark:bg-[#181822] hover:border-[#E27AA1]/40 border-[#E8EAEF] dark:border-[#262634] shadow-2xs'
                     }`}
                   >
                     <div className="flex items-start justify-between gap-2">
                       <div className="min-w-0 flex-1">
                         <div className="flex items-center gap-2">
-                          <h4 className="text-sm font-semibold text-[#3B2A33] truncate">
+                          <h4 className="text-sm font-semibold text-[#111827] dark:text-[#FFFFFF] truncate">
                             {card.cardName}
                           </h4>
-                          <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-black/5 text-[#826B76] shrink-0">
+                          <span className="text-xs font-mono px-2 py-0.5 rounded-full bg-black/5 dark:bg-white/10 text-[#6B7280] dark:text-[#9CA3AF] shrink-0">
                             {card.cardId}
                           </span>
                         </div>
-                        <p className="text-xs text-[#826B76] font-medium mt-0.5">
+                        <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] font-medium mt-0.5">
                           {card.bank}
                         </p>
                       </div>
@@ -283,13 +283,13 @@ export const TrackerPage: React.FC = () => {
                         >
                           {mapUtilizationLevel(card.utilizationLevel)}
                         </GlassBadge>
-                        {isMobile && <ChevronRight className="w-4 h-4 text-[#826B76]" />}
+                        {isMobile && <ChevronRight className="w-4 h-4 text-[#6B7280] dark:text-[#9CA3AF]" />}
                       </div>
                     </div>
 
                     <div className="mt-3 space-y-1.5">
-                      <div className="flex justify-between text-xs text-[#826B76]">
-                        <span>Tỷ lệ dùng: <b className="text-[#3B2A33] font-mono">{utilPercent}%</b></span>
+                      <div className="flex justify-between text-xs text-[#6B7280] dark:text-[#9CA3AF]">
+                        <span>Tỷ lệ dùng: <b className="text-[#111827] dark:text-[#FFFFFF] font-mono">{utilPercent}%</b></span>
                         <span className="font-mono">{formatCurrency(card.usedCredit)} / {formatCurrency(card.creditLimit)}</span>
                       </div>
                       <GlassProgress
@@ -299,9 +299,9 @@ export const TrackerPage: React.FC = () => {
                       />
                     </div>
 
-                    <div className="mt-3 pt-2 border-t border-black/5 flex items-center justify-between text-xs">
-                      <span className="text-[#826B76]">
-                        Hạn thanh toán: <strong className="text-[#3B2A33] font-mono">{formatDate(card.paymentDueDate)}</strong>
+                    <div className="mt-3 pt-2 border-t border-[#F0F1F4] dark:border-[#262634] flex items-center justify-between text-xs">
+                      <span className="text-[#6B7280] dark:text-[#9CA3AF]">
+                        Hạn thanh toán: <strong className="text-[#111827] dark:text-[#FFFFFF] font-mono">{formatDate(card.paymentDueDate)}</strong>
                       </span>
                       <div>{getPaymentStatusBadge(card.paymentStatus, card.daysRemaining)}</div>
                     </div>
@@ -313,7 +313,7 @@ export const TrackerPage: React.FC = () => {
         </div>
       )}
 
-      {/* KHỐI 2: CHI TIẾT THẺ ĐANG CHỌN (6 cột desktop/tablet, toàn màn hình có Back khi mobile) */}
+      {/* KHỐI 2: CHI TIẾT THẺ ĐANG CHỌN */}
       {(!isMobile || mobileView === 'detail') && (
         <div className="col-span-12 md:col-span-6 h-full min-h-0">
           <GlassBlock
@@ -346,28 +346,28 @@ export const TrackerPage: React.FC = () => {
             ) : (
               <div className="h-full flex flex-col justify-between gap-3 sm:gap-4">
                 {/* 1. Header & Payment Status Bar */}
-                <div className="p-4 rounded-[16px] glass-surface-tier2 border border-white/40 dark:border-white/10 flex items-center justify-between gap-4 shadow-2xs">
+                <div className="p-4 rounded-2xl bg-white dark:bg-[#181822] border border-[#E8EAEF] dark:border-[#262634] flex items-center justify-between gap-4 shadow-2xs">
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
-                      <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-[#E27AA1]/15 text-[#E27AA1] font-semibold shrink-0">
+                      <span className="text-xs font-mono px-2.5 py-0.5 rounded-full bg-pink-500/10 text-[#E27AA1] font-semibold shrink-0">
                         {activeCard.cardId}
                       </span>
-                      <span className="text-xs text-[#826B76] font-medium truncate">{activeCard.bank}</span>
+                      <span className="text-xs text-[#6B7280] dark:text-[#9CA3AF] font-medium truncate">{activeCard.bank}</span>
                     </div>
-                    <h3 className="text-base sm:text-lg font-semibold text-[#3B2A33] dark:text-[#F6EDF2] truncate mt-1">
+                    <h3 className="text-base sm:text-lg font-semibold text-[#111827] dark:text-[#FFFFFF] truncate mt-1">
                       {activeCard.cardName}
                     </h3>
                   </div>
                   <div className="shrink-0 text-right">
-                    <span className="block text-xs text-[#826B76] mb-1">Trạng thái thanh toán</span>
+                    <span className="block text-xs text-[#6B7280] dark:text-[#9CA3AF] mb-1">Trạng thái thanh toán</span>
                     <div>{getPaymentStatusBadge(activeCard.paymentStatus, activeCard.daysRemaining)}</div>
                   </div>
                 </div>
 
                 {/* 2. Utilization Metrics */}
-                <div className="p-4 rounded-[16px] glass-surface-tier2 border border-white/40 dark:border-white/10 space-y-3 shadow-2xs">
+                <div className="p-4 rounded-2xl bg-white dark:bg-[#181822] border border-[#E8EAEF] dark:border-[#262634] space-y-3 shadow-2xs">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-semibold text-[#3B2A33] dark:text-[#F6EDF2] text-sm">
+                    <span className="font-semibold text-[#111827] dark:text-[#FFFFFF] text-sm">
                       Tỷ lệ sử dụng hạn mức
                     </span>
                     <div className="flex items-center gap-2">
@@ -397,20 +397,20 @@ export const TrackerPage: React.FC = () => {
                   />
 
                   <div className="grid grid-cols-3 gap-2.5 pt-1 text-center">
-                    <div className="py-2.5 px-2 rounded-[12px] bg-black/5 dark:bg-white/5">
-                      <span className="block text-xs text-[#826B76] mb-0.5">Hạn mức</span>
-                      <span className="font-mono text-xs sm:text-sm font-semibold text-[#3B2A33] dark:text-[#F6EDF2] block truncate">
+                    <div className="py-2.5 px-2 rounded-xl bg-[#F8F9FA] dark:bg-[#1E1E2A] border border-[#E8EAEF] dark:border-[#2D2D3C]">
+                      <span className="block text-xs text-[#6B7280] dark:text-[#9CA3AF] mb-0.5">Hạn mức</span>
+                      <span className="font-mono text-xs sm:text-sm font-semibold text-[#111827] dark:text-[#FFFFFF] block truncate">
                         {formatCurrency(activeCard.creditLimit)}
                       </span>
                     </div>
-                    <div className="py-2.5 px-2 rounded-[12px] bg-black/5 dark:bg-white/5">
-                      <span className="block text-xs text-[#826B76] mb-0.5">Đã dùng</span>
-                      <span className="font-mono text-xs sm:text-sm font-semibold text-[#D64560] block truncate">
+                    <div className="py-2.5 px-2 rounded-xl bg-[#F8F9FA] dark:bg-[#1E1E2A] border border-[#E8EAEF] dark:border-[#2D2D3C]">
+                      <span className="block text-xs text-[#6B7280] dark:text-[#9CA3AF] mb-0.5">Đã dùng</span>
+                      <span className="font-mono text-xs sm:text-sm font-semibold text-[#E11D48] dark:text-[#FB7185] block truncate">
                         {formatCurrency(activeCard.usedCredit)}
                       </span>
                     </div>
-                    <div className="py-2.5 px-2 rounded-[12px] bg-black/5 dark:bg-white/5">
-                      <span className="block text-xs text-[#826B76] mb-0.5">Còn lại</span>
+                    <div className="py-2.5 px-2 rounded-xl bg-[#F8F9FA] dark:bg-[#1E1E2A] border border-[#E8EAEF] dark:border-[#2D2D3C]">
+                      <span className="block text-xs text-[#6B7280] dark:text-[#9CA3AF] mb-0.5">Còn lại</span>
                       <span className="font-mono text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 block truncate">
                         {formatCurrency(activeCard.availableCredit)}
                       </span>
@@ -419,30 +419,30 @@ export const TrackerPage: React.FC = () => {
                 </div>
 
                 {/* 3. Billing and Due Date Details (3-column balanced cards) */}
-                <div className="p-4 rounded-[16px] glass-surface-tier2 border border-white/40 dark:border-white/10 space-y-2.5 text-xs shadow-2xs">
-                  <h4 className="font-semibold text-[#3B2A33] dark:text-[#F6EDF2] flex items-center gap-1.5 text-sm">
+                <div className="p-4 rounded-2xl bg-white dark:bg-[#181822] border border-[#E8EAEF] dark:border-[#262634] space-y-2.5 text-xs shadow-2xs">
+                  <h4 className="font-semibold text-[#111827] dark:text-[#FFFFFF] flex items-center gap-1.5 text-sm">
                     <Calendar className="w-4 h-4 text-[#E27AA1]" />
                     Chu kỳ sao kê & Thanh toán
                   </h4>
 
                   <div className="grid grid-cols-3 gap-2.5 pt-1 text-center">
-                    <div className="py-2.5 px-2 rounded-[12px] bg-black/5 dark:bg-white/5">
-                      <span className="block text-xs text-[#826B76] mb-0.5">Kỳ sao kê</span>
-                      <span className="font-mono text-xs sm:text-sm font-semibold text-[#3B2A33] dark:text-[#F6EDF2] block">
+                    <div className="py-2.5 px-2 rounded-xl bg-[#F8F9FA] dark:bg-[#1E1E2A] border border-[#E8EAEF] dark:border-[#2D2D3C]">
+                      <span className="block text-xs text-[#6B7280] dark:text-[#9CA3AF] mb-0.5">Kỳ sao kê</span>
+                      <span className="font-mono text-xs sm:text-sm font-semibold text-[#111827] dark:text-[#FFFFFF] block">
                         {formatDate(activeCard.latestStatementDate)}
                       </span>
                     </div>
 
-                    <div className="py-2.5 px-2 rounded-[12px] bg-black/5 dark:bg-white/5">
-                      <span className="block text-xs text-[#826B76] mb-0.5">Hạn trả</span>
-                      <span className="font-mono text-xs sm:text-sm font-semibold text-[#3B2A33] dark:text-[#F6EDF2] block">
+                    <div className="py-2.5 px-2 rounded-xl bg-[#F8F9FA] dark:bg-[#1E1E2A] border border-[#E8EAEF] dark:border-[#2D2D3C]">
+                      <span className="block text-xs text-[#6B7280] dark:text-[#9CA3AF] mb-0.5">Hạn trả</span>
+                      <span className="font-mono text-xs sm:text-sm font-semibold text-[#111827] dark:text-[#FFFFFF] block">
                         {formatDate(activeCard.paymentDueDate)}
                       </span>
                     </div>
 
-                    <div className="py-2.5 px-2 rounded-[12px] bg-[#D64560]/10 border border-[#D64560]/20">
-                      <span className="block text-xs text-[#826B76] mb-0.5">Dư nợ sao kê</span>
-                      <span className="font-mono text-xs sm:text-sm font-semibold text-[#D64560] block truncate">
+                    <div className="py-2.5 px-2 rounded-xl bg-[#E11D48]/10 border border-[#E11D48]/20">
+                      <span className="block text-xs text-[#6B7280] dark:text-[#9CA3AF] mb-0.5">Dư nợ sao kê</span>
+                      <span className="font-mono text-xs sm:text-sm font-semibold text-[#E11D48] dark:text-[#FB7185] block truncate">
                         {formatCurrency(activeCard.unpaidStatementBalance)}
                       </span>
                     </div>

@@ -28,13 +28,13 @@ export const GlassBadge: React.FC<GlassBadgeProps> = ({
   };
 
   const variantStyles = {
-    success: 'bg-[#059669]/18 text-[#047857] dark:text-[#34D399] border-[#059669]/30 dark:bg-[#059669]/26',
-    warning: 'bg-[#D97706]/18 text-[#B45309] dark:text-[#FBBF24] border-[#D97706]/30 dark:bg-[#D97706]/26',
-    caution: 'bg-[#EA580C]/18 text-[#C2410C] dark:text-[#FB923C] border-[#EA580C]/30 dark:bg-[#EA580C]/26',
-    danger: 'bg-[#E11D48]/18 text-[#BE123C] dark:text-[#FB7185] border-[#E11D48]/30 dark:bg-[#E11D48]/26',
-    neutral: 'bg-white/30 dark:bg-white/10 text-[#68515E] dark:text-[#D8C9D2] border-white/50 dark:border-white/15',
-    pink: 'bg-[#E27AA1]/20 text-[#BE185D] dark:text-[#F472B6] border-[#E27AA1]/35 dark:bg-[#E27AA1]/28',
-    purple: 'bg-[#8B5CF6]/18 text-[#6D28D9] dark:text-[#C4B5FD] border-[#8B5CF6]/30 dark:bg-[#8B5CF6]/26',
+    success: 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800/40',
+    warning: 'bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 border-amber-200 dark:border-amber-800/40',
+    caution: 'bg-orange-50 dark:bg-orange-950/40 text-orange-700 dark:text-orange-300 border-orange-200 dark:border-orange-800/40',
+    danger: 'bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-300 border-rose-200 dark:border-rose-800/40',
+    neutral: 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-700',
+    pink: 'bg-pink-50 dark:bg-pink-950/40 text-pink-700 dark:text-pink-300 border-pink-200 dark:border-pink-800/40',
+    purple: 'bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-800/40',
   };
 
   const sizeStyles = {

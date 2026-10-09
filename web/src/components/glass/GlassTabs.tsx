@@ -27,7 +27,7 @@ export const GlassTabs: React.FC<GlassTabsProps> = ({
     <div
       data-role="tabs-group"
       className={twMerge(
-        'inline-flex items-center p-1 rounded-full bg-white/20 dark:bg-white/10 border border-white/50 dark:border-white/15 shadow-xs h-[40px] max-md:h-[44px]',
+        'inline-flex items-center p-1 rounded-full bg-[#E5E7EB]/60 dark:bg-[#1E1E2A] border border-[#E5E7EB] dark:border-[#2D2D3C] h-[40px] max-md:h-[44px]',
         className
       )}
     >
@@ -44,15 +44,15 @@ export const GlassTabs: React.FC<GlassTabsProps> = ({
               'relative h-[32px] max-md:h-[36px] px-3.5 text-[0.8125rem] leading-[1.125rem] font-medium rounded-full',
               'transition-colors select-none flex items-center gap-2 z-10 touch-target cursor-pointer',
               isActive
-                ? 'text-[#2C1E26] dark:text-[#FFFFFF]'
-                : 'text-[#68515E] dark:text-[#D8C9D2] hover:text-[#2C1E26] dark:hover:text-white'
+                ? 'text-[#111827] dark:text-[#FFFFFF]'
+                : 'text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-white'
             )}
           >
             {isActive && (
               <motion.div
                 layoutId="activeTabPill"
-                transition={{ type: 'spring', stiffness: 380, damping: 28 }}
-                className="absolute inset-0 bg-white/60 dark:bg-white/20 rounded-full shadow-[0_2px_8px_rgba(226,122,161,0.18)] border border-white/70 dark:border-white/25 -z-10"
+                transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                className="absolute inset-0 bg-white dark:bg-[#2A2A38] rounded-full shadow-xs border border-black/5 dark:border-white/10 -z-10"
               />
             )}
             {tab.icon && <span className="shrink-0">{tab.icon}</span>}
@@ -63,8 +63,8 @@ export const GlassTabs: React.FC<GlassTabsProps> = ({
                 className={clsx(
                   'text-[0.75rem] leading-[1rem] px-1.5 py-0.5 rounded-full font-medium',
                   isActive
-                    ? 'bg-[#E27AA1]/20 text-[#E27AA1]'
-                    : 'bg-black/5 dark:bg-white/10 text-[#68515E] dark:text-[#D8C9D2]'
+                    ? 'bg-pink-500/15 text-[#E27AA1]'
+                    : 'bg-black/5 dark:bg-white/10 text-[#6B7280] dark:text-[#9CA3AF]'
                 )}
               >
                 {tab.badge}

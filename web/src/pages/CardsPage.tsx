@@ -396,7 +396,7 @@ export const CardsPage: React.FC = () => {
           />
         }
       >
-        <div className="h-full w-full glass-surface-tier1 rounded-2xl border border-white/70 overflow-hidden shadow-xs">
+        <div className="h-full w-full glass-surface-tier1 rounded-2xl border border-[#E5E7EB] dark:border-[#262634] overflow-hidden shadow-xs">
           <DataTable<Card>
             columns={columns}
             data={paginatedCards}

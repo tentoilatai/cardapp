@@ -60,29 +60,26 @@ export const GlassDialog: React.FC<GlassDialogProps> = ({
 
           {/* Modal Container */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.93, y: 16 }}
+            initial={{ opacity: 0, scale: 0.95, y: 16 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 12 }}
-            transition={{ type: 'spring', stiffness: 320, damping: 26, mass: 0.9 }}
+            transition={{ type: 'spring', stiffness: 350, damping: 28, mass: 0.9 }}
             className={twMerge(
               clsx(
-                'relative w-full glass-surface-tier1 p-6 sm:p-8 z-10 my-8 rounded-2xl shadow-[0_24px_64px_rgba(214,110,150,0.28)] overflow-hidden',
+                'relative w-full bg-white dark:bg-[#181822] border border-[#E8EAEF] dark:border-[#262634] p-6 sm:p-8 z-10 my-8 rounded-2xl shadow-xl overflow-hidden',
                 maxWidthStyles[maxWidth]
               )
             )}
           >
-            {/* Top Specular Rim */}
-            <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
-
             {/* Header */}
             <div className="flex items-start justify-between gap-4 mb-5">
               <div>
-                {title && <h3 data-role="block-title" className="text-[1rem] leading-[1.5rem] font-semibold text-[#2C1E26] dark:text-[#FFFFFF]">{title}</h3>}
-                {description && <p data-role="caption" className="text-[0.75rem] leading-[1rem] text-[#68515E] dark:text-[#D8C9D2] mt-1">{description}</p>}
+                {title && <h3 data-role="block-title" className="text-[1rem] leading-[1.5rem] font-semibold text-[#111827] dark:text-[#FFFFFF]">{title}</h3>}
+                {description && <p data-role="caption" className="text-[0.75rem] leading-[1rem] text-[#6B7280] dark:text-[#9CA3AF] mt-1">{description}</p>}
               </div>
               <button
                 onClick={onClose}
-                className="w-10 h-10 rounded-full text-[#68515E] dark:text-[#D8C9D2] hover:text-[#2C1E26] dark:hover:text-white hover:bg-white/20 dark:hover:bg-white/10 transition-colors flex items-center justify-center cursor-pointer"
+                className="w-9 h-9 rounded-full text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 transition-colors flex items-center justify-center cursor-pointer"
                 aria-label="Đóng"
               >
                 <X className="w-5 h-5 stroke-[1.75px]" />

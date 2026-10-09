@@ -47,11 +47,8 @@ export const BottomNav: React.FC = () => {
       {/* 5-item Mobile/Tablet Bottom Navigation Bar (< 1024px) */}
       <nav
         data-testid="bottom-nav"
-        className="lg:hidden !fixed bottom-0 left-0 right-0 z-40 h-[64px] glass-surface-tier1 border-t border-white/80 dark:border-white/10 rounded-t-[32px] shadow-[0_-8px_32px_rgba(226,122,161,0.18)] flex items-center justify-around px-2 pb-safe select-none relative overflow-hidden"
+        className="lg:hidden !fixed bottom-0 left-0 right-0 z-40 h-[calc(60px+env(safe-area-inset-bottom,0px))] pb-[env(safe-area-inset-bottom,0px)] bg-white/95 dark:bg-[#161620]/95 border-t border-[#E8EAEF] dark:border-[#262634] rounded-t-[24px] shadow-[0_-4px_20px_rgba(0,0,0,0.05)] flex items-center justify-around px-1.5 select-none relative overflow-hidden backdrop-blur-md"
       >
-        {/* Specular top rim light */}
-        <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 to-transparent z-10" />
-
         {mainItems.map((item) => {
           const Icon = item.icon;
           return (
@@ -60,10 +57,10 @@ export const BottomNav: React.FC = () => {
               to={item.to}
               end={item.to === '/'}
               className={({ isActive }) =>
-                `relative flex flex-col items-center justify-center gap-0.5 w-[68px] h-12 rounded-full text-[0.75rem] leading-[1rem] font-medium transition-transform active:scale-[0.96] touch-target select-none ${
+                `relative flex flex-col items-center justify-center gap-0.5 flex-1 max-w-[70px] h-[48px] rounded-xl text-[0.75rem] leading-[1rem] font-medium transition-transform active:scale-[0.94] touch-target select-none ${
                   isActive
                     ? 'text-[#E27AA1] font-semibold'
-                    : 'text-[#68515E] dark:text-[#D8C9D2] hover:text-[#2C1E26]'
+                    : 'text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827]'
                 }`
               }
             >
@@ -72,11 +69,11 @@ export const BottomNav: React.FC = () => {
                   {isActive && (
                     <span
                       aria-hidden="true"
-                      className="absolute inset-0 bg-[#E27AA1]/16 dark:bg-[#E27AA1]/24 rounded-full -z-10 shadow-[0_0_12px_rgba(226,122,161,0.25)] border border-[#E27AA1]/30"
+                      className="absolute inset-x-1.5 inset-y-1 bg-pink-500/10 dark:bg-pink-500/20 rounded-xl -z-10"
                     />
                   )}
-                  <Icon className={`w-6 h-6 shrink-0 transition-transform ${isActive ? 'stroke-[2.2px] scale-105' : 'stroke-[1.75px]'}`} />
-                  <span className="truncate max-w-[64px] text-center leading-tight">
+                  <Icon className={`w-5 h-5 shrink-0 transition-transform ${isActive ? 'stroke-[2.2px] scale-105 text-[#E27AA1]' : 'stroke-[1.75px]'}`} />
+                  <span className="truncate max-w-[62px] text-center leading-tight">
                     {item.label}
                   </span>
                 </>
@@ -90,10 +87,10 @@ export const BottomNav: React.FC = () => {
           type="button"
           data-testid="bottom-nav-more"
           onClick={() => setShowMoreSheet(true)}
-          className="relative flex flex-col items-center justify-center gap-0.5 w-[68px] h-12 rounded-full text-[0.75rem] leading-[1rem] font-medium text-[#68515E] dark:text-[#D8C9D2] hover:text-[#2C1E26] transition-transform active:scale-[0.96] touch-target select-none cursor-pointer"
+          className="relative flex flex-col items-center justify-center gap-0.5 flex-1 max-w-[70px] h-[48px] rounded-xl text-[0.75rem] leading-[1rem] font-medium text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] transition-transform active:scale-[0.94] touch-target select-none cursor-pointer"
         >
-          <MoreHorizontal className="w-6 h-6 shrink-0 stroke-[1.75px]" />
-          <span className="truncate max-w-[64px] text-center leading-tight">
+          <MoreHorizontal className="w-5 h-5 shrink-0 stroke-[1.75px]" />
+          <span className="truncate max-w-[62px] text-center leading-tight">
             {vi.nav.more}
           </span>
         </button>
@@ -119,15 +116,15 @@ export const BottomNav: React.FC = () => {
         <div className="space-y-3">
           {/* User Profile Card */}
           {user && (
-            <div className="h-[48px] flex items-center gap-3 px-4 rounded-xl bg-white/70 dark:bg-white/5 border border-white/80 dark:border-white/10 shrink-0">
+            <div className="h-[48px] flex items-center gap-3 px-4 rounded-xl bg-[#F8F9FA] dark:bg-[#1E1E2A] border border-[#E8EAEF] dark:border-[#2D2D3C] shrink-0">
               <div className="w-8 h-8 rounded-full bg-[#E27AA1]/15 text-[#E27AA1] flex items-center justify-center font-semibold text-[0.8125rem] shrink-0">
                 <User className="w-4 h-4 stroke-[1.75px]" />
               </div>
               <div className="min-w-0 flex-1">
-                <div className="text-[0.8125rem] font-medium text-[#2C1E26] dark:text-[#FFFFFF] truncate">
+                <div className="text-[0.8125rem] font-medium text-[#111827] dark:text-[#FFFFFF] truncate">
                   {user.username}
                 </div>
-                <div className="text-[0.75rem] leading-[1rem] text-[#68515E] dark:text-[#D8C9D2] truncate">
+                <div className="text-[0.75rem] leading-[1rem] text-[#6B7280] dark:text-[#9CA3AF] truncate">
                   {user.roles?.includes('Admin') ? 'Quản trị viên' : 'Người dùng'}
                 </div>
               </div>
@@ -147,7 +144,7 @@ export const BottomNav: React.FC = () => {
                     `h-[48px] flex items-center gap-3 px-4 rounded-full text-[0.875rem] font-medium transition-all active:scale-[0.98] touch-target ${
                       isActive
                         ? 'bg-gradient-to-r from-[#E27AA1] to-[#F092B5] text-white shadow-xs'
-                        : 'bg-white/60 dark:bg-white/5 text-[#2C1E26] dark:text-[#D8C9D2] border border-white/60 dark:border-white/10 hover:bg-white/80'
+                        : 'bg-white dark:bg-[#1E1E2A] text-[#111827] dark:text-[#FFFFFF] border border-[#E8EAEF] dark:border-[#2D2D3C] hover:bg-[#F9FAFB]'
                     }`
                   }
                 >

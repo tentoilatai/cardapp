@@ -19,9 +19,20 @@ const STORAGE_KEYS = {
   TRANSACTIONS: 'mycard_transactions_v1',
   SETTINGS: 'mycard_settings_v1',
   USER: 'mycard_user_v1',
+  USERS: 'mycard_users_v1',
   LOCAL_MODE: 'mycard_local_mode_v1',
   INITIALIZED: 'mycard_initialized_v1'
 };
+
+export interface StoredUser {
+  id: string;
+  username: string;
+  password?: string;
+  fullName?: string;
+  roles: string[];
+  mustChangePassword?: boolean;
+  createdAt: string;
+}
 
 // Billing and schedule helpers
 export function calculateStatementDate(transactionDateStr: string, statementDay: number): string {
@@ -139,6 +150,16 @@ class LocalDatabase {
     this.setItem(STORAGE_KEYS.LOCAL_MODE, String(enabled));
   }
 
+  private getActiveUsername(): string {
+    const user = this.getUser();
+    return (user?.username || 'taitv').trim().toLowerCase();
+  }
+
+  private getUserKey(baseKey: string, specificUsername?: string): string {
+    const u = (specificUsername || this.getActiveUsername()).toLowerCase();
+    return `mycard_u_${u}_${baseKey}`;
+  }
+
   public init() {
     const initialized = this.getItem(STORAGE_KEYS.INITIALIZED);
     if (!initialized) {
@@ -148,11 +169,13 @@ class LocalDatabase {
 
   public resetToSeedData() {
     const seed = seedDataRaw as any;
-    this.setItem(STORAGE_KEYS.CARDS, JSON.stringify(seed.cards || []));
-    this.setItem(STORAGE_KEYS.MCCS, JSON.stringify(seed.mccs || []));
-    this.setItem(STORAGE_KEYS.RULES, JSON.stringify(seed.cashbackRules || []));
-    this.setItem(STORAGE_KEYS.TRANSACTIONS, JSON.stringify(seed.transactions || []));
-    this.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify(seed.settings || {
+    
+    // Seed default user 'taitv'
+    const taitvKey = (k: string) => `mycard_u_taitv_${k}`;
+    this.setItem(taitvKey('cards'), JSON.stringify(seed.cards || []));
+    this.setItem(taitvKey('rules'), JSON.stringify(seed.cashbackRules || []));
+    this.setItem(taitvKey('transactions'), JSON.stringify(seed.transactions || []));
+    this.setItem(taitvKey('settings'), JSON.stringify(seed.settings || {
       id: 1,
       utilizationMildThreshold: 0.5,
       utilizationWarningThreshold: 0.7,
@@ -162,32 +185,80 @@ class LocalDatabase {
       banks: ['Techcombank', 'OCB', 'ACB', 'UOB', 'VIB', 'Shinhan Bank', 'HSBC', 'VPBank', 'TPBank', 'Sacombank', 'Vietcombank', 'MB Bank', 'BIDV', 'VietinBank', 'Cake by VPBank', 'Timo by BVBank'],
       categories: ['Groceries', 'Dining', 'Online', 'Transport', 'Fuel', 'Utilities', 'Travel', 'Health', 'Education', 'Shopping', 'Entertainment', 'Insurance', 'Other']
     }));
+
+    // Seed shared MCC catalog
+    this.setItem(STORAGE_KEYS.MCCS, JSON.stringify(seed.mccs || []));
+
+    // Active user session
     this.setItem(STORAGE_KEYS.USER, JSON.stringify({
+      id: 'user-default',
       username: 'taitv',
+      fullName: 'Tài TV',
       roles: ['Admin'],
       mustChangePassword: false
     }));
+
+    // Registered users list
+    this.setItem(STORAGE_KEYS.USERS, JSON.stringify([
+      {
+        id: 'user-default',
+        username: 'taitv',
+        password: '123',
+        fullName: 'Tài TV',
+        roles: ['Admin'],
+        mustChangePassword: false,
+        createdAt: new Date().toISOString()
+      }
+    ]));
     this.setItem(STORAGE_KEYS.INITIALIZED, 'true');
   }
 
-  // Raw entity access
+  // Raw entity access - 100% ISOLATED PER USER
   public getCards(): Card[] {
     this.init();
-    try {
-      return JSON.parse(this.getItem(STORAGE_KEYS.CARDS) || '[]');
-    } catch {
-      return [];
+    const key = this.getUserKey('cards');
+    const data = this.getItem(key);
+    if (data !== null) {
+      try {
+        return JSON.parse(data);
+      } catch {
+        return [];
+      }
     }
+
+    // Backward compatibility for taitv legacy keys
+    if (this.getActiveUsername() === 'taitv') {
+      const legacyData = this.getItem(STORAGE_KEYS.CARDS);
+      if (legacyData) {
+        try {
+          const cards = JSON.parse(legacyData);
+          this.setCards(cards);
+          return cards;
+        } catch {
+          // ignore
+        }
+      }
+      const seed = seedDataRaw as any;
+      const seedCards = seed.cards || [];
+      this.setCards(seedCards);
+      return seedCards;
+    }
+
+    return [];
   }
 
   public setCards(cards: Card[]): void {
-    this.setItem(STORAGE_KEYS.CARDS, JSON.stringify(cards));
+    const key = this.getUserKey('cards');
+    this.setItem(key, JSON.stringify(cards));
   }
 
   public getMccs(): Mcc[] {
     this.init();
     try {
-      return JSON.parse(this.getItem(STORAGE_KEYS.MCCS) || '[]');
+      const stored = this.getItem(STORAGE_KEYS.MCCS);
+      if (stored) return JSON.parse(stored);
+      const seed = seedDataRaw as any;
+      return seed.mccs || [];
     } catch {
       return [];
     }
@@ -199,56 +270,117 @@ class LocalDatabase {
 
   public getRules(): CashbackRule[] {
     this.init();
-    try {
-      return JSON.parse(this.getItem(STORAGE_KEYS.RULES) || '[]');
-    } catch {
-      return [];
+    const key = this.getUserKey('rules');
+    const data = this.getItem(key);
+    if (data !== null) {
+      try {
+        return JSON.parse(data);
+      } catch {
+        return [];
+      }
     }
+
+    // Backward compatibility for taitv legacy keys
+    if (this.getActiveUsername() === 'taitv') {
+      const legacyData = this.getItem(STORAGE_KEYS.RULES);
+      if (legacyData) {
+        try {
+          const rules = JSON.parse(legacyData);
+          this.setRules(rules);
+          return rules;
+        } catch {
+          // ignore
+        }
+      }
+      const seed = seedDataRaw as any;
+      const seedRules = seed.cashbackRules || [];
+      this.setRules(seedRules);
+      return seedRules;
+    }
+
+    return [];
   }
 
   public setRules(rules: CashbackRule[]): void {
-    this.setItem(STORAGE_KEYS.RULES, JSON.stringify(rules));
+    const key = this.getUserKey('rules');
+    this.setItem(key, JSON.stringify(rules));
   }
 
   public getTransactions(): Transaction[] {
     this.init();
-    try {
-      return JSON.parse(this.getItem(STORAGE_KEYS.TRANSACTIONS) || '[]');
-    } catch {
-      return [];
+    const key = this.getUserKey('transactions');
+    const data = this.getItem(key);
+    if (data !== null) {
+      try {
+        return JSON.parse(data);
+      } catch {
+        return [];
+      }
     }
+
+    // Backward compatibility for taitv legacy keys
+    if (this.getActiveUsername() === 'taitv') {
+      const legacyData = this.getItem(STORAGE_KEYS.TRANSACTIONS);
+      if (legacyData) {
+        try {
+          const txs = JSON.parse(legacyData);
+          this.setTransactions(txs);
+          return txs;
+        } catch {
+          // ignore
+        }
+      }
+      const seed = seedDataRaw as any;
+      const seedTxs = seed.transactions || [];
+      this.setTransactions(seedTxs);
+      return seedTxs;
+    }
+
+    return [];
   }
 
   public setTransactions(txs: Transaction[]): void {
-    this.setItem(STORAGE_KEYS.TRANSACTIONS, JSON.stringify(txs));
+    const key = this.getUserKey('transactions');
+    this.setItem(key, JSON.stringify(txs));
   }
 
   public getSettings(): AppSettings {
     this.init();
-    try {
-      return JSON.parse(this.getItem(STORAGE_KEYS.SETTINGS) || '{}');
-    } catch {
-      return {
-        id: 1,
-        utilizationMildThreshold: 0.5,
-        utilizationWarningThreshold: 0.7,
-        utilizationDangerThreshold: 0.9,
-        dueSoonDays: 5,
-        nearCapThreshold: 0.8,
-        banks: [],
-        categories: []
-      };
+    const key = this.getUserKey('settings');
+    const data = this.getItem(key);
+    if (data !== null) {
+      try {
+        return JSON.parse(data);
+      } catch {
+        // fallback
+      }
     }
+
+    const defaultSettings: AppSettings = {
+      id: 1,
+      utilizationMildThreshold: 0.5,
+      utilizationWarningThreshold: 0.7,
+      utilizationDangerThreshold: 0.9,
+      dueSoonDays: 5,
+      nearCapThreshold: 0.8,
+      banks: ['Techcombank', 'OCB', 'ACB', 'UOB', 'VIB', 'Shinhan Bank', 'HSBC', 'VPBank', 'TPBank', 'Sacombank', 'Vietcombank', 'MB Bank', 'BIDV', 'VietinBank', 'Cake by VPBank', 'Timo by BVBank'],
+      categories: ['Groceries', 'Dining', 'Online', 'Transport', 'Fuel', 'Utilities', 'Travel', 'Health', 'Education', 'Shopping', 'Entertainment', 'Insurance', 'Other']
+    };
+
+    // Initialize for active user
+    this.setSettings(defaultSettings);
+    return defaultSettings;
   }
 
   public setSettings(s: AppSettings): void {
-    this.setItem(STORAGE_KEYS.SETTINGS, JSON.stringify(s));
+    const key = this.getUserKey('settings');
+    this.setItem(key, JSON.stringify(s));
   }
 
   public getUser(): User | null {
-    this.init();
     try {
-      return JSON.parse(this.getItem(STORAGE_KEYS.USER) || 'null');
+      const raw = this.getItem(STORAGE_KEYS.USER);
+      return raw ? JSON.parse(raw) : null;
     } catch {
       return null;
     }
@@ -256,6 +388,145 @@ class LocalDatabase {
 
   public setUser(u: User | null): void {
     this.setItem(STORAGE_KEYS.USER, JSON.stringify(u));
+  }
+
+  public getUsers(): StoredUser[] {
+    this.init();
+    try {
+      const list = JSON.parse(this.getItem(STORAGE_KEYS.USERS) || '[]');
+      if (!Array.isArray(list) || list.length === 0) {
+        const defaultUser: StoredUser = {
+          id: 'user-default',
+          username: 'taitv',
+          password: '123',
+          fullName: 'Tài TV',
+          roles: ['Admin'],
+          mustChangePassword: false,
+          createdAt: new Date().toISOString()
+        };
+        this.setUsers([defaultUser]);
+        return [defaultUser];
+      }
+      return list;
+    } catch {
+      return [];
+    }
+  }
+
+  public setUsers(users: StoredUser[]): void {
+    this.setItem(STORAGE_KEYS.USERS, JSON.stringify(users));
+  }
+
+  public findUserByUsername(username: string): StoredUser | null {
+    if (!username) return null;
+    const users = this.getUsers();
+    const cleanName = username.trim().toLowerCase();
+    return users.find((u) => u.username.toLowerCase() === cleanName) || null;
+  }
+
+  public registerUser(data: { username: string; password?: string; fullName?: string }): User {
+    const users = this.getUsers();
+    const cleanUsername = data.username.trim();
+    const existing = users.find((u) => u.username.toLowerCase() === cleanUsername.toLowerCase());
+    if (existing) {
+      throw new Error('Tên đăng nhập đã tồn tại, vui lòng chọn tên khác.');
+    }
+
+    const newUserRecord: StoredUser = {
+      id: `user-${Date.now()}`,
+      username: cleanUsername,
+      password: data.password || '123456',
+      fullName: data.fullName?.trim() || cleanUsername,
+      roles: ['User'],
+      mustChangePassword: false,
+      createdAt: new Date().toISOString()
+    };
+
+    users.push(newUserRecord);
+    this.setUsers(users);
+
+    const activeUser: User = {
+      id: newUserRecord.id,
+      username: newUserRecord.username,
+      fullName: newUserRecord.fullName,
+      roles: newUserRecord.roles,
+      mustChangePassword: false
+    };
+
+    // Set active user session
+    this.setUser(activeUser);
+
+    // Initialize isolated empty datasets for this user
+    this.setItem(this.getUserKey('cards', cleanUsername), JSON.stringify([]));
+    this.setItem(this.getUserKey('rules', cleanUsername), JSON.stringify([]));
+    this.setItem(this.getUserKey('transactions', cleanUsername), JSON.stringify([]));
+    this.setItem(this.getUserKey('settings', cleanUsername), JSON.stringify({
+      id: 1,
+      utilizationMildThreshold: 0.5,
+      utilizationWarningThreshold: 0.7,
+      utilizationDangerThreshold: 0.9,
+      dueSoonDays: 5,
+      nearCapThreshold: 0.8,
+      banks: ['Techcombank', 'OCB', 'ACB', 'UOB', 'VIB', 'Shinhan Bank', 'HSBC', 'VPBank', 'TPBank', 'Sacombank', 'Vietcombank', 'MB Bank', 'BIDV', 'VietinBank', 'Cake by VPBank', 'Timo by BVBank'],
+      categories: ['Groceries', 'Dining', 'Online', 'Transport', 'Fuel', 'Utilities', 'Travel', 'Health', 'Education', 'Shopping', 'Entertainment', 'Insurance', 'Other']
+    }));
+
+    return activeUser;
+  }
+
+  public verifyCredentials(username: string, password?: string): User | null {
+    const cleanUsername = username.trim();
+    const user = this.findUserByUsername(cleanUsername);
+    if (!user) {
+      // If user doesn't exist yet, register them with their own isolated data
+      return this.registerUser({
+        username: cleanUsername,
+        password: password || '123456',
+        fullName: cleanUsername
+      });
+    }
+
+    // If password matches or user has no password set
+    if (!user.password || user.password === password) {
+      const activeUser: User = {
+        id: user.id,
+        username: user.username,
+        fullName: user.fullName || user.username,
+        roles: user.roles,
+        mustChangePassword: !!user.mustChangePassword
+      };
+      this.setUser(activeUser);
+      return activeUser;
+    }
+
+    // Wrong password
+    return null;
+  }
+
+  public updateUserPassword(username: string, currentPassword?: string, newPassword?: string): boolean {
+    if (!newPassword) throw new Error('Vui lòng nhập mật khẩu mới');
+    const users = this.getUsers();
+    const idx = users.findIndex((u) => u.username.toLowerCase() === username.trim().toLowerCase());
+    if (idx === -1) {
+      throw new Error('Không tìm thấy tài khoản người dùng');
+    }
+
+    const targetUser = users[idx];
+    if (targetUser.password && currentPassword && targetUser.password !== currentPassword) {
+      throw new Error('Mật khẩu hiện tại không chính xác');
+    }
+
+    targetUser.password = newPassword;
+    targetUser.mustChangePassword = false;
+    users[idx] = targetUser;
+    this.setUsers(users);
+
+    const currentUser = this.getUser();
+    if (currentUser && currentUser.username.toLowerCase() === username.trim().toLowerCase()) {
+      currentUser.mustChangePassword = false;
+      this.setUser(currentUser);
+    }
+    return true;
   }
 
   // Recalculate all transactions for a card in a given month

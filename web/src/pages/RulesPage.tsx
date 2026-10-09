@@ -275,7 +275,7 @@ export const RulesPage: React.FC = () => {
           </div>
         }
       >
-        <div className="h-full w-full glass-surface-dense rounded-[24px] border border-white/70 overflow-y-auto p-4 space-y-4 shadow-xs">
+        <div className="h-full w-full glass-surface-dense rounded-[24px] border border-[#E5E7EB] dark:border-[#262634] overflow-y-auto p-4 space-y-4 shadow-xs">
           {isLoadingRules ? (
             <div className="p-8 text-center text-xs text-[#826B76]">Đang tải danh sách quy tắc hoàn tiền...</div>
           ) : cardsWithRules.length === 0 ? (
@@ -288,12 +288,12 @@ export const RulesPage: React.FC = () => {
               return (
                 <div
                   key={card.id}
-                  className="rounded-[16px] glass-surface-tier2 border border-white/40 dark:border-white/10 overflow-hidden shadow-xs transition-all"
+                  className="rounded-[16px] glass-surface-tier2 border border-[#E5E7EB] dark:border-[#262634] overflow-hidden shadow-xs transition-all"
                 >
                   {/* Sticky Accordion Header per Card */}
                   <div
                     onClick={() => toggleCardAccordion(card.id)}
-                    className="p-4 px-5 flex items-center justify-between bg-white/70 dark:bg-white/10 hover:bg-white/90 cursor-pointer select-none border-b border-black/5 dark:border-white/5"
+                    className="p-4 px-5 flex items-center justify-between bg-gray-50/80 dark:bg-[#1C1C28] hover:bg-gray-100/80 dark:hover:bg-[#222230] cursor-pointer select-none border-b border-[#E5E7EB] dark:border-[#262634]"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full bg-[#E27AA1]/15 text-[#E27AA1] flex items-center justify-center font-semibold text-xs">

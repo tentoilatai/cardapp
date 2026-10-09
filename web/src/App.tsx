@@ -14,6 +14,7 @@ import { TransactionsPage } from './pages/TransactionsPage';
 import { MonthPage } from './pages/MonthPage';
 import { TrackerPage } from './pages/TrackerPage';
 import { SettingsPage } from './pages/SettingsPage';
+import { ChangePasswordPage } from './pages/ChangePasswordPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 const queryClient = new QueryClient({
@@ -71,6 +72,7 @@ export const App: React.FC = () => {
                 <Route path="tracker/:cardId" element={<TrackerPage />} />
 
                 <Route path="settings" element={<SettingsPage />} />
+                <Route path="change-password" element={<ChangePasswordPage />} />
                 <Route path="*" element={<NotFoundPage />} />
               </Route>
 

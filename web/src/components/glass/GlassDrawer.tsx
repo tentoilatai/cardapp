@@ -58,27 +58,24 @@ export const GlassDrawer: React.FC<GlassDrawerProps> = ({
             aria-hidden="true"
           />
 
-          {/* Drawer Slide-in Panel (Tier 1 Kính trong + 32px Radius on Left Side) */}
+          {/* Drawer Slide-in Panel */}
           <motion.div
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
-            transition={{ type: 'spring', stiffness: 300, damping: 30, mass: 0.85 }}
-            className={`relative w-full ${width} h-full glass-surface-tier1 rounded-l-[32px] border-l border-white/60 dark:border-white/10 shadow-[-16px_0_48px_rgba(214,110,150,0.18)] flex flex-col z-10 overflow-hidden`}
+            transition={{ type: 'spring', stiffness: 320, damping: 32, mass: 0.85 }}
+            className={`relative w-full ${width} h-full bg-white dark:bg-[#181822] rounded-l-[32px] border-l border-[#E8EAEF] dark:border-[#262634] shadow-2xl flex flex-col z-10 overflow-hidden`}
             role="dialog"
             aria-modal="true"
           >
-            {/* Top Specular Rim */}
-            <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
-
             {/* Header */}
-            <div className="p-6 border-b border-black/5 dark:border-white/10 flex items-start justify-between gap-4 shrink-0">
+            <div className="p-6 border-b border-[#F0F1F4] dark:border-[#262634] flex items-start justify-between gap-4 shrink-0">
               <div>
-                <h2 data-role="block-title" className="text-[1rem] leading-[1.5rem] font-semibold text-[#2C1E26] dark:text-[#FFFFFF] tracking-tight">
+                <h2 data-role="block-title" className="text-[1rem] leading-[1.5rem] font-semibold text-[#111827] dark:text-[#FFFFFF] tracking-tight">
                   {title}
                 </h2>
                 {subtitle && (
-                  <p data-role="caption" className="text-[0.75rem] leading-[1rem] text-[#68515E] dark:text-[#D8C9D2] mt-0.5 font-normal">
+                  <p data-role="caption" className="text-[0.75rem] leading-[1rem] text-[#6B7280] dark:text-[#9CA3AF] mt-0.5 font-normal">
                     {subtitle}
                   </p>
                 )}
@@ -89,7 +86,7 @@ export const GlassDrawer: React.FC<GlassDrawerProps> = ({
                 size="icon"
                 onClick={onClose}
                 aria-label="Đóng ngăn kéo"
-                className="shrink-0 -mr-2 -mt-1 text-[#68515E] dark:text-[#D8C9D2] hover:text-[#2C1E26] dark:hover:text-white"
+                className="shrink-0 -mr-2 -mt-1 text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-white"
               >
                 <X className="w-5 h-5 stroke-[1.75px]" />
               </GlassButton>

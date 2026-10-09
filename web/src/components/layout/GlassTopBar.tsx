@@ -94,9 +94,7 @@ export const GlassTopBar: React.FC<GlassTopBarProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-30 h-[64px] px-5 md:px-7 rounded-2xl md:rounded-3xl flex items-center justify-between glass-surface-clear shadow-[0_4px_20px_rgba(214,110,150,0.06)] relative overflow-hidden">
-      {/* Top Specular Rim */}
-      <div className="pointer-events-none absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/80 to-transparent" />
+    <header className="sticky top-0 z-30 h-[64px] px-5 md:px-7 rounded-2xl md:rounded-3xl flex items-center justify-between bg-white dark:bg-[#181822] border border-[#E5E7EB] dark:border-[#262634] shadow-xs relative overflow-hidden">
 
       {/* Page Title & Breadcrumb */}
       <div className="flex items-center gap-2.5 min-w-0">

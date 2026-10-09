@@ -314,7 +314,7 @@ export const MccPage: React.FC = () => {
           />
         }
       >
-        <div className="h-full w-full glass-surface-dense rounded-[24px] border border-white/70 overflow-hidden shadow-xs">
+        <div className="h-full w-full glass-surface-dense rounded-[24px] border border-[#E5E7EB] dark:border-[#262634] overflow-hidden shadow-xs">
           <DataTable<Mcc>
             columns={columns}
             data={paginatedMccs}

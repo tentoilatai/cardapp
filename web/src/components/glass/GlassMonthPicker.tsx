@@ -96,12 +96,12 @@ export const GlassMonthPicker: React.FC<GlassMonthPickerProps> = ({
   return (
     <div ref={containerRef} className={`relative inline-flex items-center ${className}`}>
       {/* Pill Capsule Control */}
-      <div className="flex items-center bg-white/20 dark:bg-white/10 p-0.5 rounded-full border border-white/60 dark:border-white/15 shadow-2xs transition-all hover:border-[#E27AA1]/50 h-[40px] max-md:h-[44px]">
+      <div className="flex items-center bg-white dark:bg-[#1E1E2A] p-0.5 rounded-full border border-[#E5E7EB] dark:border-[#2D2D3C] shadow-2xs transition-all hover:border-[#E27AA1]/50 h-[40px] max-md:h-[44px]">
         {/* Prev Month Button */}
         <button
           type="button"
           onClick={handlePrevMonth}
-          className="w-8 h-8 max-md:w-10 max-md:h-10 flex items-center justify-center rounded-full text-[#68515E] dark:text-[#D8C9D2] hover:text-[#2C1E26] hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer touch-target active:scale-95"
+          className="w-8 h-8 max-md:w-10 max-md:h-10 flex items-center justify-center rounded-full text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer touch-target active:scale-95"
           title="Tháng trước"
           aria-label="Tháng trước"
         >
@@ -119,11 +119,11 @@ export const GlassMonthPicker: React.FC<GlassMonthPickerProps> = ({
           ) : (
             <Calendar className="w-4 h-4 text-[#E27AA1]" />
           )}
-          <span className="font-medium text-[0.875rem] max-md:text-[0.9375rem] leading-[1.375rem] text-[#2C1E26] dark:text-[#FFFFFF] tabular-nums">
+          <span className="font-medium text-[0.875rem] max-md:text-[0.9375rem] leading-[1.375rem] text-[#111827] dark:text-[#FFFFFF] tabular-nums">
             {formatMonthKey(value)}
           </span>
           <ChevronDown
-            className={`w-3.5 h-3.5 text-[#68515E] dark:text-[#D8C9D2] transition-transform duration-200 ${
+            className={`w-3.5 h-3.5 text-[#6B7280] dark:text-[#9CA3AF] transition-transform duration-200 ${
               isOpen ? 'rotate-180 text-[#E27AA1]' : ''
             }`}
           />
@@ -133,7 +133,7 @@ export const GlassMonthPicker: React.FC<GlassMonthPickerProps> = ({
         <button
           type="button"
           onClick={handleNextMonth}
-          className="w-8 h-8 max-md:w-10 max-md:h-10 flex items-center justify-center rounded-full text-[#68515E] dark:text-[#D8C9D2] hover:text-[#2C1E26] hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer touch-target active:scale-95"
+          className="w-8 h-8 max-md:w-10 max-md:h-10 flex items-center justify-center rounded-full text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer touch-target active:scale-95"
           title="Tháng sau"
           aria-label="Tháng sau"
         >
@@ -149,14 +149,14 @@ export const GlassMonthPicker: React.FC<GlassMonthPickerProps> = ({
             animate={{ opacity: 1, scale: 1, y: 4 }}
             exit={{ opacity: 0, scale: 0.95, y: -6 }}
             transition={{ duration: 0.15, ease: 'easeOut' }}
-            className="absolute right-0 top-full mt-1.5 z-50 w-72 p-3.5 rounded-2xl glass-surface-tier1 shadow-[0_16px_40px_rgba(226,122,161,0.25)]"
+            className="absolute right-0 top-full mt-1.5 z-50 w-72 p-3.5 rounded-2xl bg-white dark:bg-[#181822] border border-[#E8EAEF] dark:border-[#262634] shadow-lg shadow-black/5 dark:shadow-black/40"
           >
             {/* Year Selector Header */}
-            <div className="flex items-center justify-between px-1 pb-3 mb-2 border-b border-white/20 dark:border-white/10">
+            <div className="flex items-center justify-between px-1 pb-3 mb-2 border-b border-[#F0F1F4] dark:border-[#262634]">
               <button
                 type="button"
                 onClick={() => setViewYear((y) => y - 1)}
-                className="p-1.5 rounded-full text-[#68515E] dark:text-[#D8C9D2] hover:text-[#2C1E26] hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer"
+                className="p-1.5 rounded-full text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] hover:bg-black/5 dark:hover:bg-white/10 transition-colors cursor-pointer"
                 title="Năm trước"
                 aria-label="Năm trước"
               >

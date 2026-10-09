@@ -142,19 +142,19 @@ export function DataTable<T>({
                   key={key}
                   data-testid="mobile-card-item"
                   onClick={() => onRowClick?.(row)}
-                  className={`glass-surface-tier2 p-4 rounded-2xl space-y-2.5 transition-transform min-h-[72px] active:scale-[0.98] border border-white/40 dark:border-white/10 ${
+                  className={`glass-surface-tier2 p-3.5 sm:p-4 rounded-2xl space-y-2 transition-all min-h-[72px] active:scale-[0.98] border border-[#E5E7EB] dark:border-[#262634] shadow-xs ${
                     onRowClick ? 'cursor-pointer hover:border-[#E27AA1]/40' : ''
                   }`}
                 >
                   {/* Row 1: Title (left, truncate) + Value (right, tabular-nums) + Actions Button (right) */}
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="font-medium text-[0.9375rem] leading-[1.375rem] text-[#2C1E26] dark:text-[#FFFFFF] truncate min-w-0 flex-1">
+                  <div className="flex items-center justify-between gap-2.5">
+                    <div className="font-semibold text-[0.9375rem] leading-[1.375rem] text-[#2C1E26] dark:text-[#FFFFFF] truncate min-w-0 flex-1">
                       {renderCell(titleCol, row, index) || '—'}
                     </div>
 
                     <div className="flex items-center gap-1.5 shrink-0">
                       {valueCol && (
-                        <div className="text-[0.9375rem] leading-[1.375rem] font-medium text-[#E27AA1] dark:text-[#F092B5] tabular-nums shrink-0">
+                        <div className="text-[0.9375rem] leading-[1.375rem] font-semibold text-[#E27AA1] dark:text-[#F092B5] tabular-nums shrink-0">
                           {renderCell(valueCol, row, index)}
                         </div>
                       )}
@@ -167,7 +167,7 @@ export function DataTable<T>({
                             e.stopPropagation();
                             setActionSheetRow(row);
                           }}
-                          className="w-11 h-11 -mr-2 rounded-full flex items-center justify-center text-[#68515E] dark:text-[#D8C9D2] hover:bg-black/5 dark:hover:bg-white/10 active:scale-95 touch-target cursor-pointer"
+                          className="w-9 h-9 -mr-1.5 rounded-full flex items-center justify-center text-[#68515E] dark:text-[#D8C9D2] hover:bg-black/5 dark:hover:bg-white/10 active:scale-95 touch-target cursor-pointer"
                           aria-label="Thao tác"
                         >
                           <MoreHorizontal className="w-5 h-5 stroke-[1.75px]" />
@@ -192,7 +192,7 @@ export function DataTable<T>({
 
                   {/* Row 3 (optional): Meta info pills (max 2) */}
                   {metaCols.length > 0 && (
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1 pt-1.5 border-t border-black/5 dark:border-white/5 text-[0.75rem] leading-[1rem] text-[#68515E] dark:text-[#D8C9D2]">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 pt-1.5 border-t border-[#E5E7EB] dark:border-[#262634] text-[0.75rem] leading-[1rem] text-[#68515E] dark:text-[#D8C9D2]">
                       {metaCols.map((mCol) => {
                         const content = renderCell(mCol, row, index);
                         if (!content) return null;
@@ -231,7 +231,7 @@ export function DataTable<T>({
                   setActionSheetRow(null);
                   onEdit(row);
                 }}
-                className="w-full h-[48px] flex items-center gap-3 px-5 rounded-full bg-white/40 dark:bg-white/5 border border-white/40 dark:border-white/10 hover:bg-white/60 text-[#2C1E26] dark:text-[#FFFFFF] font-medium text-[0.875rem] max-md:text-[0.9375rem] leading-[1.375rem] transition-all active:scale-[0.98] touch-target cursor-pointer"
+                className="w-full h-[48px] flex items-center gap-3 px-5 rounded-xl bg-white dark:bg-[#1E1E2A] border border-[#E5E7EB] dark:border-[#2D2D3C] hover:bg-gray-50 dark:hover:bg-[#252535] text-[#2C1E26] dark:text-[#FFFFFF] font-medium text-[0.875rem] max-md:text-[0.9375rem] leading-[1.375rem] transition-all active:scale-[0.98] touch-target cursor-pointer"
               >
                 <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center shrink-0">
                   <Edit2 className="w-4 h-4 stroke-[1.75px]" />
@@ -248,7 +248,7 @@ export function DataTable<T>({
                   setActionSheetRow(null);
                   onDelete(row);
                 }}
-                className="w-full h-[48px] flex items-center gap-3 px-5 rounded-full bg-rose-500/10 hover:bg-rose-500/20 text-[#E11D48] font-medium text-[0.875rem] max-md:text-[0.9375rem] leading-[1.375rem] transition-all active:scale-[0.98] touch-target cursor-pointer"
+                className="w-full h-[48px] flex items-center gap-3 px-5 rounded-xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/40 hover:bg-rose-100 text-[#E11D48] font-medium text-[0.875rem] max-md:text-[0.9375rem] leading-[1.375rem] transition-all active:scale-[0.98] touch-target cursor-pointer"
               >
                 <div className="w-8 h-8 rounded-full bg-rose-500/15 text-[#E11D48] flex items-center justify-center shrink-0">
                   <Trash2 className="w-4 h-4 stroke-[1.75px]" />

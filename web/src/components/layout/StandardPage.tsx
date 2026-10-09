@@ -37,15 +37,20 @@ export const StandardPage: React.FC<StandardPageProps> = ({
     return (
       <div
         data-testid={testId || 'standard-page'}
-        className="flex flex-col w-full min-h-[calc(100dvh-64px)] pb-[calc(var(--bottom-nav-height)+24px)] pt-safe px-4"
+        className="flex flex-col w-full min-h-[100dvh] pb-[calc(var(--bottom-nav-height)+env(safe-area-inset-bottom,0px)+36px)] px-3.5 sm:px-4"
       >
-        {/* VÙNG A: Compact Sticky Topbar on Mobile (56px) */}
+        {/* VÙNG A: Compact Sticky Topbar on Mobile with Notch / Status Bar Clearance */}
         <header
           data-region="topbar"
-          className="sticky top-0 z-30 h-[56px] -mx-4 px-4 glass-surface-clear border-b border-black/5 dark:border-white/10 flex items-center justify-between gap-3 shadow-xs shrink-0"
+          className="sticky top-0 z-30 -mx-3.5 sm:-mx-4 px-3.5 sm:px-4 pt-[max(8px,env(safe-area-inset-top,0px))] pb-2.5 glass-surface-tier1 border-b border-[#E5E7EB] dark:border-[#262634] flex items-center justify-between gap-2.5 shadow-xs shrink-0"
         >
-          <div className="min-w-0 flex-1">
-            <h1 data-role="page-title" className="text-[18px] leading-[26px] font-semibold text-[#2C1E26] dark:text-[#FFFFFF] tracking-tight truncate">
+          <div className="flex items-center gap-2.5 min-w-0 flex-1">
+            <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#E27AA1] to-[#F8C8DC] flex items-center justify-center text-white shadow-xs shrink-0 p-1">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white">
+                <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" />
+              </svg>
+            </div>
+            <h1 data-role="page-title" className="text-[1.125rem] leading-[1.625rem] font-semibold text-[#2C1E26] dark:text-[#FFFFFF] tracking-tight truncate">
               {title}
             </h1>
           </div>
@@ -56,11 +61,11 @@ export const StandardPage: React.FC<StandardPageProps> = ({
           )}
         </header>
 
-        {/* Optional Month Picker Row (44px) directly under Topbar */}
+        {/* Optional Month Picker Row directly under Topbar */}
         {monthPicker && (
           <div
             data-testid="mobile-month-picker-row"
-            className="h-[44px] my-1 flex items-center justify-center shrink-0"
+            className="my-2 flex items-center justify-center shrink-0"
           >
             {monthPicker}
           </div>
@@ -70,7 +75,7 @@ export const StandardPage: React.FC<StandardPageProps> = ({
         {toolbar && (
           <div
             data-region="toolbar"
-            className="py-2.5 shrink-0"
+            className="py-1.5 shrink-0"
           >
             {toolbar}
           </div>
@@ -79,7 +84,7 @@ export const StandardPage: React.FC<StandardPageProps> = ({
         {/* VÙNG C: Content Area */}
         <main
           data-region="content"
-          className="flex-1 w-full my-2 space-y-4"
+          className="flex-1 w-full my-2 space-y-3.5"
         >
           {children}
         </main>

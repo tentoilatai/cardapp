@@ -76,15 +76,15 @@ export const GlassButton: React.FC<GlassButtonProps> = ({
 
   const variantStyles = {
     primary:
-      'bg-gradient-to-r from-[#E27AA1] to-[#F092B5] text-white font-medium shadow-[0_6px_20px_rgba(226,122,161,0.35),inset_0_1.5px_0_rgba(255,255,255,0.65)] hover:shadow-[0_8px_26px_rgba(226,122,161,0.48)] hover:brightness-105 border border-white/35',
+      'bg-gradient-to-r from-[#E27AA1] to-[#F092B5] text-white font-medium shadow-sm shadow-[#E27AA1]/25 hover:shadow-md hover:shadow-[#E27AA1]/35 hover:brightness-105 active:brightness-95',
     secondary:
-      'bg-white/20 dark:bg-white/10 text-[#2C1E26] dark:text-[#FFFFFF] font-medium border border-white/50 dark:border-white/15 shadow-[0_2px_8px_rgba(226,122,161,0.06),inset_0_1px_1px_rgba(255,255,255,0.5)] hover:bg-white/35 dark:hover:bg-white/20',
+      'bg-white dark:bg-[#20202B] text-[#111827] dark:text-white font-medium border border-[#E5E7EB] dark:border-[#2D2D3C] shadow-2xs hover:bg-[#F9FAFB] dark:hover:bg-[#282836]',
     ghost:
-      'bg-transparent hover:bg-white/25 dark:hover:bg-white/10 text-[#68515E] dark:text-[#D8C9D2] hover:text-[#2C1E26] dark:hover:text-white border border-transparent hover:border-white/20',
+      'bg-transparent hover:bg-black/5 dark:hover:bg-white/5 text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#111827] dark:hover:text-white',
     danger:
-      'bg-gradient-to-r from-[#E11D48] to-[#F43F5E] text-white font-medium shadow-[0_6px_20px_rgba(225,29,72,0.30),inset_0_1px_0_rgba(255,255,255,0.4)] hover:shadow-[0_8px_24px_rgba(225,29,72,0.45)] border border-white/25',
+      'bg-[#E11D48] hover:bg-[#BE123C] text-white font-medium shadow-sm shadow-rose-600/20',
     outline:
-      'bg-transparent text-[#E27AA1] font-medium border border-[#E27AA1]/60 hover:bg-[#E27AA1]/12',
+      'bg-transparent text-[#E27AA1] font-medium border border-[#E27AA1] hover:bg-[#E27AA1]/10',
   };
 
   return (

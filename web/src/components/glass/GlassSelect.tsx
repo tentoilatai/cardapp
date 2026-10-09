@@ -179,12 +179,12 @@ export const GlassSelect: React.FC<GlassSelectProps> = ({
             'w-full flex items-center justify-between gap-2.5 text-left font-medium',
             shape === 'rounded' ? 'rounded-[16px]' : 'rounded-full',
             sizeStyles[size],
-            'bg-white/20 dark:bg-white/05 border border-white/50 dark:border-white/15 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]',
-            'text-[#2C1E26] dark:text-[#FFFFFF]',
+            'bg-white dark:bg-[#1E1E2A] border border-[#E5E7EB] dark:border-[#2D2D3C] shadow-2xs',
+            'text-[#111827] dark:text-[#FFFFFF]',
             'transition-all duration-200 cursor-pointer outline-none active:scale-[0.98]',
             'hover:border-[#E27AA1]/60',
-            isOpen && 'ring-3 ring-[#E27AA1]/30 border-[#E27AA1]',
-            error && 'border-[#E11D48] ring-3 ring-[#E11D48]/30',
+            isOpen && 'ring-2 ring-[#E27AA1]/20 border-[#E27AA1]',
+            error && 'border-[#E11D48] ring-2 ring-[#E11D48]/20',
             disabled && 'opacity-40 cursor-not-allowed pointer-events-none',
             triggerClassName
           )
@@ -196,7 +196,7 @@ export const GlassSelect: React.FC<GlassSelectProps> = ({
           {selectedOption?.icon && (
             <span className="shrink-0 text-[#E27AA1]">{selectedOption.icon}</span>
           )}
-          <span className={clsx('truncate', !selectedOption && 'text-[#8E7583] dark:text-[#9E8B97]')}>
+          <span className={clsx('truncate', !selectedOption && 'text-[#9CA3AF] dark:text-[#6B7280]')}>
             {selectedOption ? selectedOption.label : placeholder}
           </span>
           {selectedOption?.badge && (
@@ -206,13 +206,13 @@ export const GlassSelect: React.FC<GlassSelectProps> = ({
 
         <ChevronDown
           className={clsx(
-            'w-4 h-4 text-[#68515E] dark:text-[#D8C9D2] shrink-0 transition-transform duration-200',
+            'w-4 h-4 text-[#6B7280] dark:text-[#9CA3AF] shrink-0 transition-transform duration-200',
             isOpen && 'rotate-180 text-[#E27AA1]'
           )}
         />
       </button>
 
-      {/* Animated Popover Menu with Tier 1 Overlay */}
+      {/* Animated Popover Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -225,8 +225,8 @@ export const GlassSelect: React.FC<GlassSelectProps> = ({
                 'absolute left-0 right-0 z-50',
                 placement === 'top' ? 'bottom-full mb-1' : 'top-full mt-1',
                 'rounded-2xl overflow-hidden',
-                'glass-surface-tier1',
-                'shadow-[0_16px_40px_rgba(226,122,161,0.25)]',
+                'bg-white dark:bg-[#181822] border border-[#E8EAEF] dark:border-[#262634]',
+                'shadow-lg shadow-black/5 dark:shadow-black/40',
                 menuClassName
               )
             )}
@@ -234,7 +234,7 @@ export const GlassSelect: React.FC<GlassSelectProps> = ({
           >
             {/* Search Box if enabled */}
             {isSearchEnabled && (
-              <div className="p-2 border-b border-white/20 dark:border-white/10 bg-white/30 dark:bg-white/5">
+              <div className="p-2 border-b border-[#F0F1F4] dark:border-[#262634] bg-[#FAFAFC] dark:bg-[#1A1A26]">
                 <div className="relative flex items-center">
                   <input
                     ref={searchInputRef}
@@ -242,14 +242,14 @@ export const GlassSelect: React.FC<GlassSelectProps> = ({
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder={searchPlaceholder}
-                    className="w-full pl-9 pr-8 py-2 rounded-full bg-white/40 dark:bg-white/10 border border-white/40 dark:border-white/15 text-[0.8125rem] text-[#2C1E26] dark:text-[#FFFFFF] placeholder-[#8E7583] dark:placeholder-[#9E8B97] focus:outline-none focus:ring-2 focus:ring-[#E27AA1]/40"
+                    className="w-full pl-9 pr-8 py-2 rounded-full bg-white dark:bg-[#1E1E2A] border border-[#E5E7EB] dark:border-[#2D2D3C] text-[0.8125rem] text-[#111827] dark:text-[#FFFFFF] placeholder-[#9CA3AF] dark:placeholder-[#6B7280] focus:outline-none focus:ring-2 focus:ring-[#E27AA1]/30"
                   />
-                  <Search className="w-4 h-4 absolute left-3 text-[#68515E] dark:text-[#D8C9D2] pointer-events-none z-10" />
+                  <Search className="w-4 h-4 absolute left-3 text-[#6B7280] dark:text-[#9CA3AF] pointer-events-none z-10" />
                   {searchQuery && (
                     <button
                       type="button"
                       onClick={() => setSearchQuery('')}
-                      className="absolute right-2.5 text-[#68515E] hover:text-[#2C1E26] p-1 rounded-full cursor-pointer z-10"
+                      className="absolute right-2.5 text-[#6B7280] hover:text-[#111827] p-1 rounded-full cursor-pointer z-10"
                     >
                       <X className="w-3.5 h-3.5" />
                     </button>
@@ -261,7 +261,7 @@ export const GlassSelect: React.FC<GlassSelectProps> = ({
             {/* Option List */}
             <div className="max-h-60 sm:max-h-72 overflow-y-auto p-1.5 space-y-1 overscroll-contain">
               {filteredOptions.length === 0 ? (
-                <div className="py-6 px-3 text-center text-[0.75rem] text-[#8E7583] flex flex-col items-center gap-1.5">
+                <div className="py-6 px-3 text-center text-[0.75rem] text-[#9CA3AF] flex flex-col items-center gap-1.5">
                   <Search className="w-5 h-5 opacity-40 text-[#E27AA1]" />
                   <span>Không tìm thấy "{searchQuery}"</span>
                 </div>

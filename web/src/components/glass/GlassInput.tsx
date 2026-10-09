@@ -38,7 +38,7 @@ export const GlassInput = forwardRef<HTMLInputElement, GlassInputProps>(({
         <label
           htmlFor={inputId}
           data-role="field-label"
-          className="text-[0.8125rem] leading-[1.125rem] font-medium text-[#68515E] dark:text-[#D8C9D2] select-none"
+          className="text-[0.8125rem] leading-[1.125rem] font-medium text-[#4B5563] dark:text-[#9CA3AF] select-none"
         >
           {label}
         </label>
@@ -50,25 +50,25 @@ export const GlassInput = forwardRef<HTMLInputElement, GlassInputProps>(({
           className={twMerge(
             clsx(
               'w-full h-[40px] max-md:h-[48px] px-4 text-[0.875rem] max-md:text-[1rem] leading-[1.375rem]',
-              'text-[#2C1E26] dark:text-[#FFFFFF] placeholder-[#8E7583] dark:placeholder-[#9E8B97]',
-              'bg-white/20 dark:bg-white/05 border border-white/50 dark:border-white/15 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]',
+              'text-[#111827] dark:text-[#FFFFFF] placeholder-[#9CA3AF] dark:placeholder-[#6B7280]',
+              'bg-white dark:bg-[#1E1E2A] border border-[#E5E7EB] dark:border-[#2D2D3C] shadow-2xs',
               'transition-all duration-200 outline-none rounded-full',
-              'focus:border-[#E27AA1] focus:ring-3 focus:ring-[#E27AA1]/30',
+              'focus:border-[#E27AA1] focus:ring-2 focus:ring-[#E27AA1]/20',
               effectiveLeftIcon && 'pl-10',
               rightIcon && 'pr-10',
-              error && 'border-[#E11D48] focus:border-[#E11D48] focus:ring-[#E11D48]/30',
+              error && 'border-[#E11D48] focus:border-[#E11D48] focus:ring-[#E11D48]/20',
               className
             )
           )}
           {...props}
         />
         {effectiveLeftIcon && (
-          <span className="absolute left-3.5 text-[#68515E] dark:text-[#D8C9D2] pointer-events-none z-10 flex items-center justify-center">
+          <span className="absolute left-3.5 text-[#6B7280] dark:text-[#9CA3AF] pointer-events-none z-10 flex items-center justify-center">
             {effectiveLeftIcon}
           </span>
         )}
         {rightIcon && (
-          <div className="absolute right-3.5 text-[#68515E] dark:text-[#D8C9D2] flex items-center z-10">
+          <div className="absolute right-3.5 text-[#6B7280] dark:text-[#9CA3AF] flex items-center z-10">
             {rightIcon}
           </div>
         )}

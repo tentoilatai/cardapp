@@ -20,8 +20,8 @@ export const MustChangePasswordModal: React.FC = () => {
     e.preventDefault();
     setError(null);
 
-    if (newPassword.length < 10) {
-      setError(vi.auth.passwordHint);
+    if (newPassword.length < 6) {
+      setError('Mật khẩu mới yêu cầu tối thiểu 6 ký tự.');
       return;
     }
     if (newPassword !== confirmPassword) {
